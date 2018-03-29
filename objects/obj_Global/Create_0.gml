@@ -1,5 +1,5 @@
 /// @description Initialize Game
-///
+
 // Change Cursor
 window_set_cursor(cr_none);
 cursor_sprite = spr_Cursor;
