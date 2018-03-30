@@ -1,10 +1,11 @@
-/// @description Type Messages to console
+/// @description Toggle Console
 
-if (keyboard_check_pressed(input.enterTextKey)){
-	if (!instance_exists(obj_UserInputTextbox)){
-		instance_create_layer(x, y, "Controllers", obj_UserInputTextbox);
+// Toggle Console
+if (keyboard_check_pressed(input.toggleConsole)){
+	if (!instance_exists(obj_Console)){
+		instance_create_layer(x, y, "Controllers", obj_Console);
 	}
 	else{
-		instance_destroy(obj_UserInputTextbox);
+		instance_destroy(obj_Console);
 	}
 }

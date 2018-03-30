@@ -1,6 +1,10 @@
 /// @description Initialize Variables
 
-toggleInventory = ord("I");
+free = true;
+
+toggleConsole = vk_enter;
 toggleDebug = ord("D");
-actionKey = vk_space;
-enterTextKey = vk_enter;
+toggleInventory = ord("I");
+space = vk_space;
+tab = vk_tab;
+shift = vk_shift;

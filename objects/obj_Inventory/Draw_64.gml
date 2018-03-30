@@ -5,7 +5,7 @@ var xOffset = 640;
 var yOffset = 0;
 
 // If you press the toggleInventory key, open or close the inventory
-if (keyboard_check_pressed(input.toggleInventory)){
+if (keyboard_check_pressed(input.toggleInventory) and input.free){
 	if (showInventory == true){showInventory = false;}
 	else{showInventory = true;}
 }

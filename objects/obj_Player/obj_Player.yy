@@ -2,9 +2,18 @@
     "id": "fcaed006-c52a-45a8-b499-a46d4ff08e31",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "obj_Mage",
+    "name": "obj_Player",
     "eventList": [
-        
+        {
+            "id": "f8fef97d-e653-4c7b-9c3a-687120bc8185",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "fcaed006-c52a-45a8-b499-a46d4ff08e31"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

@@ -2,7 +2,7 @@
     "id": "9a33d976-d877-4e9a-bb4f-1fc8b8327e7a",
     "modelName": "GMTileSet",
     "mvc": "1.11",
-    "name": "tiles_Pristine1",
+    "name": "tiles_1",
     "auto_tile_sets": [
         
     ],

@@ -1,7 +1,7 @@
 /// @description Create Mouse Click player movement
 
-// If you're not already clicking something
-if (global.clickingSomething == false){
+// If you're not already clicking something and aren't holding shift
+if (global.clickingSomething == false and !keyboard_check(input.shift)){
 	// If you've already created a Mouse Click
 	if (instance_exists(obj_MouseClick)){
 		// Get rid of that one

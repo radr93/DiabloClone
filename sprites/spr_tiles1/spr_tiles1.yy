@@ -2,7 +2,7 @@
     "id": "04accd11-450e-4057-9e0f-8819537c250f",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "spr_tiles_Pristine1",
+    "name": "spr_tiles1",
     "For3D": false,
     "HTile": true,
     "VTile": true,
