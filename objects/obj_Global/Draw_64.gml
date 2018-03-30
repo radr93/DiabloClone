@@ -1,14 +1,7 @@
 /// @description Debug Info
 
-// Open Debug Menu
-if (keyboard_check_pressed(input.toggleDebug) and input.free){
-	if (debugOpen){
-		debugOpen = false;
-	}
-	else{
-		debugOpen = true;
-	}
-}
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
 
 // Display Information
 if (debugOpen){
@@ -25,5 +18,4 @@ if (debugOpen){
 	draw_text(32, yy, "obj_MessageBox message[2]: " + string(obj_MessageBox.message[2])); yy+=16;
 	draw_text(32, yy, "obj_MessageBox message[3]: " + string(obj_MessageBox.message[3])); yy+=16;
 	draw_text(32, yy, "obj_MessageBox message[4]: " + string(obj_MessageBox.message[4])); yy+=16;
-	draw_text(32, yy, "obj_MessageBox message[5]: " + string(obj_MessageBox.message[5])); yy+=16;
 }

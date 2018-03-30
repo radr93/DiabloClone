@@ -2,8 +2,8 @@
 
 // Initialize Variables
 inputText = "";
-x = 95;
-y = 448;
+defaultX = 96
+defaultY = 480
 
 // Don't allow user to open menus (changes back to true in destroy event)
 input.free = false;

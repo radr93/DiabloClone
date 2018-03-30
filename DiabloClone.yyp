@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "0e29eb98-d441-4e5a-977e-3a06aa6713be",
+            "Value": {
+                "id": "725c2ed4-7c77-4606-bf6f-a019b47f3fd3",
+                "resourcePath": "fonts\\font_Calibri\\font_Calibri.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "107c57a9-bc8f-4f57-beb1-9fb539bb310c",
             "Value": {
                 "id": "92acc3d3-246b-41ff-9dd2-2e3a4aa22cdf",
@@ -196,6 +204,14 @@
                 "id": "2e9bb63a-4797-4dfc-bc76-9b34c13f9cb3",
                 "resourcePath": "views\\4b39cd6b-bd69-4a1a-89ce-601b6dd5a0b9.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "5b253114-ff82-45b4-b892-3ae5ba51273d",
+            "Value": {
+                "id": "20a689af-65b4-4b25-9d17-c667bd10728d",
+                "resourcePath": "scripts\\scr_ParseForDebug\\scr_ParseForDebug.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -472,7 +488,8 @@
         }
     ],
     "script_order": [
-        "3ced5ad6-96c2-4252-8e3c-35704a7067ff"
+        "3ced5ad6-96c2-4252-8e3c-35704a7067ff",
+        "5b253114-ff82-45b4-b892-3ae5ba51273d"
     ],
     "tutorial": ""
 }

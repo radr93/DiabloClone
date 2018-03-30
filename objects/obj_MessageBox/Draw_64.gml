@@ -1,27 +1,34 @@
 /// @description Draw Text to Screen
 
-// Draw Message Box
-draw_sprite(spr_MessageBox, 0, x, y);
+// Position (relative to view)
+x = defaultX * global.windowWidthScale
+y = defaultY * global.windowHeightScale
 
-// Update Messages
-if (newMessage != ""){
-	for (i = maxMessages; i >= 0; i--){
-		message[i+1] = message[i];
+if (showMessageBox == true){
+	// Draw Message Box
+	draw_sprite_ext(spr_MessageBox, 0, x, y, global.windowWidthScale, global.windowHeightScale, 0, c_white, .6);
+	// Update Messages
+	if (newMessage != ""){
+		for (i = maxMessages-1; i >= 0; i--){
+			message[i+1] = message[i];
+		}
+		// Parse newest message
+		var parsedText = scr_ParseInput(newMessage);
+		if (parsedText == newMessage){
+			message[0] = ("["+global.hour+":"+global.minute+global.ampm+"]"+"["+newMessageSender+"]: "+newMessage);
+		}
+		else{
+			message[0] = parsedText;
+		}
+		newMessage = "";
+		newMessageSender = "";
 	}
-	// Parse newest message
-	var parsedText = scr_ParseInput(newMessage);
-	if (parsedText == newMessage){
-		message[0] = newMessage;
+
+	// Draw Messages
+	var xx = x+(8*global.windowWidthScale);
+	var yy = y+(8*global.windowHeightScale);
+	for (i = maxMessages-1; i >= 0; i--){
+			draw_text(xx, yy, newMessageSender+message[i]);
+			yy += 16;
 	}
-	else{
-		message[0] = parsedText;
-	}
-	newMessage = "";
-}
-// Draw Messages
-var xx = 95+6
-var yy = 352+6
-for (i = maxMessages; i >= 0; i--){
-		draw_text(xx, yy, message[i]);
-		yy += 16;
 }

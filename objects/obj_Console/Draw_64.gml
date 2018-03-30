@@ -1,12 +1,13 @@
 /// @description Draw Textbox
 
+x = defaultX * global.windowWidthScale;
+y = defaultY * global.windowHeightScale;
+
 // Draw console
-	draw_sprite(spr_Console, 0, x, y);
+	draw_sprite_ext(spr_Console, 0, x, y, global.windowWidthScale, global.windowHeightScale, 0, c_white, .8);
 
 // Draw text in console
-	// Set Align
-	draw_set_halign(fa_left);
-	draw_set_valign(fa_top);
+	draw_set_font(global.messageFont);
 	// Get and draw string
 	inputText = keyboard_string;
-	draw_text(x+3, y-3, "["+obj_Player.name+"] "+inputText);
+	draw_text(x+(2*global.windowWidthScale), y+(2*global.windowHeightScale), "["+obj_Player.name+"] "+inputText);
