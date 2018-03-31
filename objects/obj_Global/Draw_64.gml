@@ -15,4 +15,7 @@ if (debugOpen){
 	draw_text(32, yy, "obj_MessageBox instances: " + string(instance_number(obj_MessageBox))); yy+=16;
 	draw_text(32, yy, "obj_MessageBox newMessage: " + string(obj_MessageBox.newMessage)); yy+=16;
 	draw_text(32, yy, "obj_MessageBox message[0]: " + string(obj_MessageBox.message[0,msg.text])); yy+=16;
+	draw_text(32, yy, "gui mouse_x: " + string(global.guiMouseX)); yy+=16;
+	draw_text(32, yy, "gui mouse_y: " + string(global.guiMouseY)); yy+=16;
+	draw_text(32, yy, "window dragging: " + string(global.draggingWindow)); yy+=16;
 }

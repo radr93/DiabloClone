@@ -6,7 +6,6 @@
 
 // Initialize Local Variables
 	debugOpen = false; // list opened via console command of the states of variables define in Draw GUI
-	consoleStringPrevious = ""; // stores the last string entered in the console
 	
 // Get User Date/Time
 	date_set_timezone(timezone_local);
@@ -19,8 +18,10 @@
 	// GUI
 	global.guiMouseX = device_mouse_x_to_gui(0);
 	global.guiMouseY = device_mouse_y_to_gui(0);
+	
 	// In-Game
 	global.clickingSomething = false;	// Used to tell if you're clicking something such as a menu or wall
+	global.draggingWindow = false;
 	
 	// Fonts 
 	global.messageFont = font_Calibri;

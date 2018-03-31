@@ -2,5 +2,5 @@
 
 // Copy previous string 
 if keyboard_check_pressed(input.tab){
-	keyboard_string = obj_Global.consoleStringPrevious;;
+	keyboard_string = obj_MessageBox.consoleStringPrevious;
 }

@@ -1,52 +1,62 @@
-/// @description Draw Text to Screen
-
+/// @description Draw Message Box to Screen
 if (showMessageBox == true){
-	
-	// If mouse in within range of the message box
-	if (global.guiMouseX >= guiX and global.guiMouseX <= (guiX+sprite_get_width(spr_MessageBox))){
-		if (global.guiMouseY >= guiY and global.guiMouseY <= guiY + sprite_get_height(spr_MessageBox)){
-			// If mouse is clicking the message box
-			if (mouse_check_button(input.leftClick)){
-				global.clickingSomething = true;
-					show_debug_message("\nguiX: "+string(guiX));
-					show_debug_message("guiY: "+string(guiY)+"\n");
-					show_debug_message("guiMouseX: "+string(global.guiMouseX));
-					show_debug_message("guiMouseY: "+string(global.guiMouseY));
-				var xDiff = global.guiMouseX - guiX;
-				var yDiff = global.guiMouseY - guiY;
-				guiX = global.guiMouseX+(-xDiff/4);
-				guiY = global.guiMouseY+(-yDiff/4);
-					show_debug_message("guiXdiff: "+string(xDiff));
-					show_debug_message("guiYdiff: "+string(yDiff)+"\n");
-					show_debug_message("guiX: "+string(guiX));
-					show_debug_message("guiY: "+string(guiY)+"\n");
-			}
-		}
-	}
 	// Draw Message Box
 	draw_sprite_ext(spr_MessageBox, 0, guiX, guiY, 1, 1, 0, c_white, .6);
-	// Update Messages
+	// If mouse is within range of the message box
+	if (global.guiMouseX >= guiX and global.guiMouseX <= (guiX+width)){
+		if (global.guiMouseY >= guiY and global.guiMouseY <= (guiY+height)){
+			// If mouse is clicking the message box
+			if (mouse_check_button_pressed(input.leftClick) and !instance_exists(obj_MouseClick)){
+				global.clickingSomething = true; // You're clicking on something
+				global.draggingWindow = true; // You're dragging something
+			}
+			// If you're dragging something
+			if (global.draggingWindow == true){
+				guiX = global.guiMouseX-(width/2);
+				guiY = global.guiMouseY-(height/2);
+			}
+			// Scroll Messages Up
+			if (mouse_wheel_up()){
+				if (messageIndex <= maxMessages){
+					if (messageCount > messageIndex){
+						messageIndex++;
+					}
+				}
+			}
+			// Scroll Message Down
+			if (mouse_wheel_down()){
+				if (messageIndex >= maxMessagesToShow){
+					messageIndex--;
+				}
+			
+			}	
+		}
+	}
+	// Load New Messages into old messages
+	// If you got a new message
 	if (newMessage != ""){
-		// Move old messages up
+		// Move old messages up to make room
 		for (i = maxMessages-1; i >= 0; i--){
 			for (j = 0; j < msg.MAX; j++){
 				message[i+1, j] = message[i, j];
 			}
 		}
-		// Parse newest message
+		// Parse newest message and add to bottom of history
 		var parsedText = scr_ParseInput(newMessage);
-		// If it wasn't a command
+		// If it wasn't a command, update sender and message
 		if (parsedText == newMessage){
 			message[0,msg.time] = "["+global.hour+":"+global.minute+global.ampm+"]" // get timestamp
 			message[0,msg.sender] = "["+newMessageSender+"]: " // get user
 			message[0,msg.text] = message[0,msg.time]+message[0,msg.sender]+newMessage; // set message
 			}
-		// If it was a command
+		// If it was a command, set sender as system and use parsed text
 		else{
 			message[0,msg.time] = "["+global.hour+":"+global.minute+global.ampm+"]" // get timestamp
 			message[0,msg.sender] = "[SYSTEM]: "
 			message[0,msg.text] = message[0,msg.time]+message[0,msg.sender]+parsedText;
 		}
+		// Clear new message
+		messageCount++
 		newMessage = "";
 		newMessageSender = "";
 	}
@@ -54,7 +64,11 @@ if (showMessageBox == true){
 	// Draw Messages
 	var xx = guiX+(8*global.windowWidthScale);
 	var yy = guiY+(8*global.windowHeightScale);
-	for (i = maxMessages-1; i >= 0; i--){
+	// If you get to the bottom of the list
+	if (messageIndex < 5){
+		messageIndex = 5;
+	}
+	for (i = messageIndex-1; i >= messageIndex-maxMessagesToShow; i--){
 			if (message[i,msg.sender] == "[SYSTEM]: "){
 				draw_set_color(c_yellow)
 			}
