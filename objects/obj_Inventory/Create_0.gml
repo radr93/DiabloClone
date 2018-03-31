@@ -1,5 +1,7 @@
 /// @description Initialize Variables
 
+xOffset = 640;
+yOffset = 0;
 showInventory = false;
 
 // Initialize Inventory Slots
@@ -8,10 +10,10 @@ inventoryRows = 4;
 inventorySlots = (inventoryColumns*inventoryRows);
 // For as many slots as there are
 for (i = 0; i < inventorySlots; i += 1){
-	// Create an object and give it a "slot" number
-	inventoryButton[i] = instance_create_layer(0, 0, "Instances", obj_InventoryButton);
+	// Create an invisible button object and give it a "slot" number
+	inventoryButton[i] = instance_create_layer(0, 0, "Controllers", obj_InventoryButton);
 	inventoryButton[i].slot = i;
-	// Set all properties of all slots to empty (-1)
+	// Initiailize Empty inventory array
 	for (j = 0; j < property.MAX; j += 1){
 		inventory[i, j] = -1;
 	}

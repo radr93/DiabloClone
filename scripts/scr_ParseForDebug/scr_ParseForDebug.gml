@@ -5,6 +5,8 @@ var textToParse = argument0;
 var debug = "/debug";
 var create = "create";
 var list = "list";
+var reset = "reset";
+var quit = "quit";
 
 // Remove "/debug " from string
 	textToParse = string_delete(textToParse, 1, string_length(debug)+1);
@@ -25,17 +27,43 @@ var list = "list";
 			return("Create object failed! Invalid Object.")
 		}
 	}
-	// List command
-	if (string_pos(list, textToParse) == 1){
+	// Debug List command
+	else if (string_pos(list, textToParse) == 1){
 		var g = obj_Global;
 		if (g.debugOpen = false){
 			g.debugOpen = true;
 			return("Showing Debug List");
 		}
 		else{
-			debugOpen = false;
+			g.debugOpen = false;
 			return("Hiding Debug List");
 		}
+	}
+	// Reset Commands
+	else if (string_pos(reset, textToParse) == 1){
+		textToParse = string_delete(textToParse, 1, string_length(reset)+1);
+		var resetGame = "game"; // Restart game
+		var resetConsole = "console"; // Restart Console
+		if (string_pos(resetGame, textToParse) == 1){
+			game_restart();
+			return("Restarting game.")
+		}
+		else if (string_pos(resetConsole, textToParse) == 1){
+			instance_destroy(obj_MessageBox);
+			if (instance_exists(obj_Console)){
+				instance_destroy(obj_Console);
+			}
+			instance_create_layer(x, y, "Instances", obj_MessageBox);
+			return("Restarting console.")
+		}
+		else{
+			return("Invalid command.")	
+		}
+	}
+	// Quit Game Command
+	else if (string_pos(reset, textToParse) == 1){
+		game_end();
+		return("Quitting game.")
 	}
 	else{
 		// Invalid Command

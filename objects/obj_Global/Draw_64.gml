@@ -2,6 +2,7 @@
 
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
+draw_set_color(c_yellow);
 
 // Display Information
 if (debugOpen){
@@ -13,9 +14,5 @@ if (debugOpen){
 	draw_text(32, yy, "obj_Console instances: " + string(instance_number(obj_Console))); yy+=16;
 	draw_text(32, yy, "obj_MessageBox instances: " + string(instance_number(obj_MessageBox))); yy+=16;
 	draw_text(32, yy, "obj_MessageBox newMessage: " + string(obj_MessageBox.newMessage)); yy+=16;
-	draw_text(32, yy, "obj_MessageBox message[0]: " + string(obj_MessageBox.message[0])); yy+=16;
-	draw_text(32, yy, "obj_MessageBox message[1]: " + string(obj_MessageBox.message[1])); yy+=16;
-	draw_text(32, yy, "obj_MessageBox message[2]: " + string(obj_MessageBox.message[2])); yy+=16;
-	draw_text(32, yy, "obj_MessageBox message[3]: " + string(obj_MessageBox.message[3])); yy+=16;
-	draw_text(32, yy, "obj_MessageBox message[4]: " + string(obj_MessageBox.message[4])); yy+=16;
+	draw_text(32, yy, "obj_MessageBox message[0]: " + string(obj_MessageBox.message[0,msg.text])); yy+=16;
 }
