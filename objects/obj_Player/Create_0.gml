@@ -1,3 +1,3 @@
 /// @description Initialize Variables
 
-name = "RADR";
+name = get_string("What is your name?", "RADR");

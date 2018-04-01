@@ -223,14 +223,6 @@
             }
         },
         {
-            "Key": "3ced5ad6-96c2-4252-8e3c-35704a7067ff",
-            "Value": {
-                "id": "65894bd2-4959-444f-8dd8-cb6352b60ea5",
-                "resourcePath": "scripts\\scr_ParseInput\\scr_ParseInput.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "4562d037-3d27-4e8a-9530-82850dd930f2",
             "Value": {
                 "id": "b36f7057-6e94-45de-b3dd-24ae6f507823",
@@ -367,6 +359,14 @@
             }
         },
         {
+            "Key": "75f18460-3d6c-4b70-adad-5c917f537925",
+            "Value": {
+                "id": "df7ff5b3-a923-497e-87d5-fe3c3dfb5621",
+                "resourcePath": "scripts\\scr_CheckInputType\\scr_CheckInputType.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "7788bbc3-f8c4-4959-87dc-4ca06db81740",
             "Value": {
                 "id": "7b117bf9-63a1-415b-9134-1d4c382d9a6b",
@@ -412,6 +412,14 @@
                 "id": "c403aecd-439f-4605-8ee1-f4e7c11ec79b",
                 "resourcePath": "views\\8c656f51-163a-4098-9610-f34b9c9d533d.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8f88cc9d-e42f-4162-8164-f198be9a80c8",
+            "Value": {
+                "id": "b736d995-ed53-46dc-af0e-272d4059293d",
+                "resourcePath": "objects\\obj_DraggableParent\\obj_DraggableParent.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -744,9 +752,9 @@
         }
     ],
     "script_order": [
-        "3ced5ad6-96c2-4252-8e3c-35704a7067ff",
-        "5b253114-ff82-45b4-b892-3ae5ba51273d",
+        "75f18460-3d6c-4b70-adad-5c917f537925",
         "ff2f0244-15b2-43f7-9d1d-ad2c47acbdc9",
+        "5b253114-ff82-45b4-b892-3ae5ba51273d",
         "858d6b4f-0bbb-4cac-b860-5a9afd54033d",
         "6062ce19-df83-4eeb-92f0-9bcadbec845b",
         "010e1333-a19d-4629-a563-783dcaa3206d"

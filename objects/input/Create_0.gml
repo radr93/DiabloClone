@@ -3,7 +3,7 @@
 free = true;
 
 toggleConsole = vk_enter;
-toggleMessages = ord("M");
+toggleMessageBox = ord("M");
 toggleInventory = ord("I");
 
 escape = vk_escape;

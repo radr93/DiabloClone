@@ -1,4 +1,4 @@
-/// @description Create Mouse Click player movement
+/// @description Create Mouse Click (player movement)
 
 // If you click
 if (mouse_check_button(input.leftClick)){

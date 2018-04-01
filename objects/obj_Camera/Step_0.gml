@@ -1,7 +1,7 @@
 /// @description Run Camera
 
-x += (xTo - x)/25;
-y += (yTo - y)/25;
+x += (xTo - x)/10;
+y += (yTo - y)/10;
 
 if (instance_exists(followTarget)){
 	xTo = followTarget.x;

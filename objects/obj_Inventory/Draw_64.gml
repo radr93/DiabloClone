@@ -2,13 +2,17 @@
 
 // If you press the toggleInventory key, open or close the inventory
 if (keyboard_check_pressed(input.toggleInventory) and input.free){
-	if (showInventory == true){showInventory = false;}
-	else{showInventory = true;}
+	if (showInventory == true){
+		showInventory = false;
+	}
+	else{
+		showInventory = true;
+	}
 }
 
 // Draw the inventory if it's open
 if (showInventory = true){
-    draw_sprite(spr_Inventory, 0, xOffset, yOffset);
+    draw_sprite_ext(spr_Inventory, 0, xOffset, yOffset, 1, 1, 0, c_white, 1);
     var rowLength;
     rowLength = 8;
     var xx, yy;
