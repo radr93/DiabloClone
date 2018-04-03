@@ -3,14 +3,22 @@
 // Show or Hide Box
 showMessageBox = false;
 
-// Positioning Variables (x,y position based on the guiX and guiY, not by true x,y in room)
+// Window drag variables (moves the box around the UI)
+draggingWindow = false;
+dragOffsetX = 0;
+dragOffsetY = 0;
+
+// Get position
+var view_x = camera_get_view_x(obj_Camera.camera);
+var view_y = camera_get_view_y(obj_Camera.camera);
+xOffset = 96; // relative to camera x
+yOffset = 384; // relative to camera y
+x = view_x+xOffset;
+y = view_y+yOffset;
+
+// Get dimensions
 width = sprite_get_width(spr_MessageBox);
 height = sprite_get_height(spr_MessageBox);
-defaultX = 96;
-defaultY = 384;
-guiX = defaultX;
-guiY = defaultY;
-draggingWindow = false;
 
 // Message Properties
 enum msg{
@@ -20,32 +28,30 @@ enum msg{
 	MAX
 }
 
-// New messages
-messageQueueMax = 16;
-for (i = 0; i < messageQueueMax; i++){
-	for (j = 0; j < msg.MAX; j++){
-		messageQueue[i, j] = ""
-	}
-}
-
-// Message History
-consoleStringPrevious = ""; // the last string entered into the console
+/// Message History
+consoleStringPrevious = ""; // the last string that was entered into the console
+messagesVisible = 5; // how many messages are visible at a time in the message box
+messageIndex = 5; // increments as you scroll up and down through messages (top message in box)
+messageCount = 0; // how many messages are in the history
 maxMessages = 50; // how many messages to keep in history
-maxMessagesToShow = 5; // how many messages to show in the message box
-messageIndex = 0; // used to scroll up and down through messages
-messageCount = 0; // how many messages are currently in the history
-	
-// Message History Array
 for (i = 0; i < maxMessages; i++){
 	for (j = 0; j < msg.MAX; j++){
 		message[i, j] = "";
-		// message[0, msg.time]
-		// message[0, msg.sender] 
-		// message[0, msg.text]
+		// message[0, msg.time] = "";
+		// message[0, msg.sender]  = "";
+		// message[0, msg.text] = "";
 		// ......
-		// message[24, msg.time]
-		// message[24, msg.sender]
-		// message[24, msg.text]
+		// message[49, msg.time] = "";
+		// message[49, msg.sender] = "";
+		// message[49, msg.text] = "";
 		
+	}
+}
+
+/// New Message Queue
+messageQueueMax = 25;
+for (i = 0; i < messageQueueMax; i++){
+	for (j = 0; j < msg.MAX; j++){
+		messageQueue[i, j] = ""
 	}
 }

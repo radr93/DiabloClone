@@ -1,0 +1,1 @@
+return("["+global.hour+":"+global.minute+global.ampm+"]");

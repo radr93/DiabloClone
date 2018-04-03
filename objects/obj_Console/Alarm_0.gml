@@ -1,4 +1,4 @@
-/// @description Blinking Cursor
+/// @description Make cursor blink
 
 if (cursor == " "){
 	cursor = "|";

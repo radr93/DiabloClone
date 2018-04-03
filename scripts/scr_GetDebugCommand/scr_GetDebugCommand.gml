@@ -1,4 +1,4 @@
-/// Parse user input for debug keywords scr_ParseForDebug(textToParse)
+/// Parse user input for debug keywords scr_GetDebugCommand(textToParse)
 
 // Initialize Variables
 var textToParse = argument0;
@@ -7,6 +7,7 @@ var create = "create";
 var list = "list";
 var reset = "reset";
 var quit = "quit";
+var rename = "rename";
 
 // Remove "/debug " from string
 textToParse = string_delete(textToParse, 1, string_length(debug)+1);
@@ -74,6 +75,13 @@ else if (string_pos(reset, textToParse) == 1){
 else if (string_pos(reset, textToParse) == 1){
 	game_end();
 	return("Quitting game.")
+}
+
+// Rename Character Command
+else if (string_pos(rename, textToParse) == 1){
+	textToParse = string_delete(textToParse, 1, string_length(rename)+1);
+	obj_Player.name = textToParse;
+	return("Renamed player to "+textToParse+".")
 }
 
 // Invalid Command

@@ -2,8 +2,8 @@
 
 var item;
 var g = obj_Global;
-draw_text(x, y, string(slot)); // Draw slot number on top of slot
-//if (obj_Inventory.showInventory = true){
+if (obj_Inventory.showInventory = true){
+	draw_text(x-8, y-8, string(slot)); // Draw slot number on top of slot
     //Gather variables for the item in that slot
     for (i = 0; i < property.MAX; i += 1){
         item[i] = obj_Inventory.inventory[slot, i];
@@ -113,6 +113,6 @@ draw_text(x, y, string(slot)); // Draw slot number on top of slot
             }
         }
     }
-//}
+}
 
 

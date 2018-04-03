@@ -1,4 +1,6 @@
-/// @description Launch Camera
+/// @description Launch room controller
 
-instance_create_layer(x, y, "Controllers", obj_Camera);		// Camera
-instance_create_layer(x, y, "Controllers", obj_MessageBox);	// Launch messages/console
+if (room != __init__ and room != rm_SplashScreen){
+	// Don't launch room controllers until you're in-game.
+	instance_create_layer(x, y, "Controllers", obj_UILauncher); // Launch the UI
+}
