@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "obj_LeatherCap",
     "eventList": [
-        
+        {
+            "id": "b10cd767-a121-45f8-b178-cb74af3a6ec5",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "05d95ba0-ae7a-470f-bc7d-1024d947f640"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

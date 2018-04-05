@@ -53,5 +53,9 @@ messageQueueMax = 25;
 for (i = 0; i < messageQueueMax; i++){
 	for (j = 0; j < msg.MAX; j++){
 		messageQueue[i, j] = ""
+		// messageQueue[0, msg.time] = "";
+		// messageQueue[0, msg.sender]  = "";
+		// messageQueue[0, msg.text] = "";
+		// ......
 	}
 }

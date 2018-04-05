@@ -6,24 +6,17 @@ var view_y = camera_get_view_y(obj_Camera.camera);
 x = view_x+xOffset;
 y = view_y+yOffset;
 
-// Toggle Force Closes
+// Toggle Force Closes (first the console then the message box)
 if (keyboard_check_pressed(input.escape)){
-	// Close the console
-	if (instance_exists(obj_Console)){
-		instance_destroy(obj_Console);
-	}
-	else{ // Close the message box if console is closed
-		showMessageBox = false;
-	}
+	if (instance_exists(obj_Console)) then instance_destroy(obj_Console); else showMessageBox = false;
 }
 
-// Toggle message box
+// Toggle message box on and off
 if (keyboard_check_pressed(input.toggleMessageBox) and input.free){
-	// Show and hide message box
 	if (showMessageBox == true) then showMessageBox = false; else showMessageBox = true;
 }
 
-// Toggle console
+// Toggle console and get messages from console
 if (keyboard_check_pressed(input.toggleConsole)){
 	// If console isn't open
 	if (!instance_exists(obj_Console)){
@@ -31,7 +24,7 @@ if (keyboard_check_pressed(input.toggleConsole)){
 		showMessageBox = true;
 		instance_create_layer(x, y, "Controllers", obj_Console);
 	}
-	else{ // Otherwise, it's console is open
+	else{ // Otherwise, the console is open
 		// If there was a string entered into the console
 		if (obj_Console.inputText != ""){
 			// Send the string to the new message queue

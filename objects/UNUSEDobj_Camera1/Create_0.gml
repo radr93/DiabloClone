@@ -1,7 +1,8 @@
 /// @description Set-up camera
 
 // Create Camera and initialize variables
-camera = camera_create(); //show_debug_message("I'm camera# "+string(camera));
+camera = camera_create();
+
 
 followTarget = obj_PlayerParent;
 xTo = x;

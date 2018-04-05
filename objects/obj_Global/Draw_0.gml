@@ -3,7 +3,7 @@
 // Display Information if user enters command /debug list
 if (debugOpen){
 	var view_x = camera_get_view_x(obj_Camera.camera);
-	var view_y = camera_get_view_x(obj_Camera.camera);
+	var view_y = camera_get_view_y(obj_Camera.camera);
 	// Get Debug Text
 	var debugList =
 	 "DEBUG LIST:"+"\n"+

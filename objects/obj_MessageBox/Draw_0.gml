@@ -1,7 +1,9 @@
 /// @description Draw message box to screen
 if (showMessageBox == true){
+	
 	// Draw The Message Box
 	draw_sprite_ext(spr_MessageBox, 0, x, y, 1, 1, 0, c_white, .6);
+	
 	// Draw Messages
 	var xx = x+8;
 	var yy = y+8;

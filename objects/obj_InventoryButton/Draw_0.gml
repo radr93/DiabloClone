@@ -1,12 +1,17 @@
 /// @description Draw and interact with items in inventory
 
+/*
 var item;
 var g = obj_Global;
 if (obj_Inventory.showInventory = true){
-	draw_text(x-8, y-8, string(slot)); // Draw slot number on top of slot
+	//draw_text(x+18, y+2, "c"+string(column));
+	//draw_text(x+2, y+18, "r"+string(row));
+	//draw_text(x+14, y+14, string(column) + string(row));
+	var index = ds_grid_get(obj_Inventory.grid, column, row);
+	draw_text(x+16, y+16, string(index))
     //Gather variables for the item in that slot
     for (i = 0; i < property.MAX; i += 1){
-        item[i] = obj_Inventory.inventory[slot, i];
+        item[i] = obj_Inventory.inventory[i];
     }
     //Turn clicks into variables
     var click = mouse_check_button_pressed(input.leftClick);
@@ -14,7 +19,7 @@ if (obj_Inventory.showInventory = true){
     var shift = keyboard_check(vk_shift);
     
     //Draws a colored box behind the item (type dependent) or silver box if slot is empty
-    if (abs(mouse_x - x) < 16) and (abs(mouse_y - y) < 16){
+    if (abs(mouse_x - (x+16)) < 16) and (abs(mouse_y - (y+16)) < 16){
         draw_set_alpha(0.15);
         if (item[property.rarity] != -1){
             draw_set_colour(item[property.rarity]);
@@ -22,7 +27,7 @@ if (obj_Inventory.showInventory = true){
         else{
             draw_set_colour(c_silver);
         }
-        draw_rectangle(x - 15, y - 15, x + 15, y + 15, 0);
+        draw_rectangle(x + 1, y + 1, x + 31, y + 31, 0);
         draw_set_alpha(1);
         //If you click on the box
             
@@ -115,4 +120,4 @@ if (obj_Inventory.showInventory = true){
     }
 }
 
-
+*/

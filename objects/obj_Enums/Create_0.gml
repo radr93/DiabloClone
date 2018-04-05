@@ -29,18 +29,22 @@ Table of Contents |
 	// 1.3 Item Properties
 	// Used to hold values for item properties in inventory/item held/ground item arrays
 	enum property{
-		name,
+		item,
 		type,
+		sprite,
+		width,
+		height,
+		object,
+		
 		rarity,
 		identified,
-		sprite,
-		object,
 		
 		prop1stat,
 		prop1value,
 		prop2stat,
 		prop2value,
 		
+		name,
 		unidtooltip,
 		tooltip,
 	
