@@ -13,10 +13,10 @@ if (keyboard_check_pressed(input.toggleInventory) and input.free){
 	if (showInventory == true) then showInventory = false; else showInventory = true;
 }
 
-
+// If the inventory is open
 if (showInventory == true){
 
-	/// Check if the inventory is being clicked on
+	// Inventory Clicked on flag
 	if (mouse_x >= x and mouse_x <= (x+width)){
 		if (mouse_y >= y and mouse_y <= (y+height)){
 			if (mouse_check_button_pressed(input.leftClick)){
@@ -25,68 +25,136 @@ if (showInventory == true){
 		}
 	}
 	
-	/// Handle Grid Interaction
-	
 	// Check if inside the inventory grid
-	if (mouse_x >= gridX and mouse_x <= (gridX+(cellWidth*columns))){
-		if (mouse_y >= gridY and mouse_y <= (gridY+(cellHeight*rows))){;
+	if (mouse_x >= gridX and mouse_x < (gridX+(cellWidth*columns))){
+		if (mouse_y >= gridY and mouse_y < (gridY+(cellHeight*rows))){;
 			
-			// Get coordinates within grid
-			var column = floor((mouse_x - gridX)/32);
-			var row = floor((mouse_y - gridY)/32);
-			var slot = (((row+1)*columns)-((columns-1)-column))-1;
-			var spaceID = ds_grid_get(grid, column, row);
+			// Get mouse coordinates within the grid
+			var column, row, cell, spaceID;
 			
-			// If you click
-			if (mouse_check_button_pressed(input.leftClick)){
-				var spaceX = ds_grid_value_x(grid, 0, 0, columns-1, rows-1, spaceID); // where is the left of the object?
-				var spaceY = ds_grid_value_y(grid, 0, 0, columns-1, rows-1, spaceID); // where is the top of the object?
-				var topLeftCell = (((spaceY+1)*columns)-((columns-1)-spaceX))-1; // which cell the top left of the object is in
-				var item; // copy slot properties to temporary array and empty the inventory slot
+			column = floor((mouse_x - gridX)/32);
+			row = floor((mouse_y - gridY)/32);
+			cell = (((row+1)*columns)-((columns-1)-column))-1;
+			spaceID = ds_grid_get(grid, column, row); // -1 = empty else number is unique for each item in inventory
+			
+			// If there is an item in the cell under the mouse
+			if (spaceID > 0){
+				
+				// Get top-left cell index of the item taking up that slot 
+				var spaceX, spaceY, topLeftCell, item, itemWidth, itemHeight;
+				spaceX = ds_grid_value_x(grid, 0, 0, columns-1, rows-1, spaceID); // where is the left of the object?
+				spaceY = ds_grid_value_y(grid, 0, 0, columns-1, rows-1, spaceID); // where is the top of the object?
+				topLeftCell = (((spaceY+1)*columns)-((columns-1)-spaceX))-1; // which cell the top left of the object is in
+				
+				// Copy that item's properties to a temporary array
 				for (p = 0; p < property.MAX; p++){
 					item[p] = inventory[topLeftCell, p];
 				}
-				// If space you clicked isn't empty
-				if (spaceID != -1){
-					// Empty it					
-					var itemWidth = sprite_get_width(inventory[topLeftCell, property.width])-1;
-					var itemHeight = sprite_get_height(inventory[topLeftCell, property.height])-1;
-					show_debug_message("\n\nspaceX = " + string(spaceX) + "\nspaceY = " + string(spaceY) + " topLeftCell = " + string(topLeftCell));
-					ds_grid_set_region(grid, column, row, column+itemWidth, row+itemHeight, -1);
-					for (p = 0; p < property.MAX; p++){
-						inventory[topLeftCell, p] = -1;
+				// Get size of the item taking up that slot 
+				itemWidth = (item[property.width]-1);
+				itemHeight = (item[property.height]-1);
+					
+				// If you click
+				if (mouse_check_button_pressed(input.leftClick)){
+					// If you're holding something
+					if (itemHeld[property.item] != -1){
+						// Get the held item's dimensions and see if it fits
+						var itemHeldWidth, itemHeldHeight, spaceFree;
+						itemHeldWidth = (itemHeld[property.width]-1);
+						itemHeldHeight = (itemHeld[property.height]-1);
+						spaceFree = ds_grid_check_region(grid, column, row, itemHeldWidth, itemHeldHeight);
+						
+						// If there was only 1 item in the space to occupy
+						if (spaceFree > 0){
+							for (p = 0; p < property.MAX; p++){
+								inventory[topLeftCell, p] = -1;
+								inventory[cell, p] = itemHeld[p];
+								itemHeld[p] = item[p];
+							}
+							// Empty the space that the item occupied
+							ds_grid_set_region(grid, spaceX, spaceY, spaceX+itemWidth, spaceY+itemHeight, -1);
+							// Mark space occupied by the item in the grid and assign the item its own unique space ID for each slot it covers in the grid
+							ds_grid_set_region(grid, column, row, column+itemHeldWidth, row+itemHeldHeight, IDindex)
+							IDindex ++;
+						}
+						// Otherwise there was more than one item in the area
+						else{
+							show_debug_message("Not enough space or too many items to drop. <LINE 82>")
+						}
+						// If you were able to put the item held down
+						if (itemHeld[property.item] == -1){
+							// Pick up the item that was in the slot to the mouse
+							for (p = 0; p < property.MAX; p++){
+								itemHeld[p] = item[p];
+							}
+						}
+					}
+					// If you aren't holding anything
+					else if (itemHeld[property.item] == -1){
+						// Pick up the item that was in the slot to mouse and empty the inventory slot
+						for (p = 0; p < property.MAX; p++){
+							itemHeld[p] = item[p];
+							inventory[topLeftCell, p] = -1;
+						}
+						// Clear the space the item occupied in the grid
+						ds_grid_set_region(grid, spaceX, spaceY, spaceX+itemWidth, spaceY+itemHeight, -1);
 					}
 				}
+			}
+			// If the cell under the mouse is empty
+			else if (spaceID == -1){
+				// If you click
+				if (mouse_check_button_pressed(input.leftClick)){
+					// If you're holding something
+					if (itemHeld[property.item] != -1){
+						// Get the held item's dimensions and see if it fits
+						var itemHeldWidth, itemHeldHeight, spaceFree;
+						itemHeldWidth = (itemHeld[property.width]);
+						itemHeldHeight = (itemHeld[property.height]);
+						spaceFree = ds_grid_check_region(grid, column, row, itemHeldWidth, itemHeldHeight);
+						// If it fits
+						if (spaceFree == -1){
+							// Fill the space your mouse item takes
+							for (p = 0; p < property.MAX; p++){
+								inventory[cell, p] = itemHeld[p];
+								itemHeld[p] = -1;
+							}
+							// Mark space occupied by the item in the grid and assign the item its own unique space ID for each slot it covers in the grid
+							ds_grid_set_region(grid, column, row, column+(itemHeldWidth-1), row+(itemHeldHeight-1), IDindex)
+							IDindex ++;
+						}
+						
+						// If there was only 1 item in the space to occupy
+						if (spaceFree > 0){
+							// Get top-left cell index of the item taking up that slot 
+							var spaceX, spaceY, topLeftCell, item, itemWidth, itemHeight;
+							spaceX = ds_grid_value_x(grid, 0, 0, columns-1, rows-1, spaceFree); // where is the left of the object?
+							spaceY = ds_grid_value_y(grid, 0, 0, columns-1, rows-1, spaceFree); // where is the top of the object?
+							topLeftCell = (((spaceY+1)*columns)-((columns-1)-spaceX))-1; // which cell the top left of the object is in
 				
-				// If you were holding something, fill the slot with what you were holding
-				if (itemHeld[property.item] != -1){
-					// Get item dimensions
-					var itemWidth = (itemHeld[property.width]-1);
-					var itemHeight = (itemHeld[property.height]-1);
-					// If the item is only 1x1
-					if (itemWidth == 0 and itemHeight == 0){
-						for (p = 0; p < property.MAX; p++){
-							inventory[slot, p] = itemHeld[p];
+							// Copy that item's properties to a temporary array
+							for (p = 0; p < property.MAX; p++){
+								item[p] = inventory[topLeftCell, p];
+							}
+							// Get size of the item taking up that slot 
+							itemWidth = (item[property.width]-1);
+							itemHeight = (item[property.height]-1);
+							for (p = 0; p < property.MAX; p++){
+								inventory[topLeftCell, p] = -1;
+								inventory[cell, p] = itemHeld[p];
+								itemHeld[p] = item[p];
+							}
+							// Empty the space that the item occupied
+							ds_grid_set_region(grid, spaceX, spaceY, spaceX+itemWidth, spaceY+itemHeight, -1);
+							// Mark space occupied by the item in the grid and assign the item its own unique space ID for each slot it covers in the grid
+							ds_grid_set_region(grid, column, row, column+itemHeldWidth, row+itemHeldHeight, IDindex)
+							IDindex ++;
 						}
-						IDindex ++; // gives the item its own unique space ID
-						ds_grid_set(grid, column, row, IDindex)
-					}
-					// If item is more than 1x1
-					if (itemWidth > 0 or itemHeight > 0){
-						// CHECK FOR ADJACENT
-						// SPACES CODE
-						var itemWidth = itemHeld[property.width]-1;
-						var itemHeight = itemHeld[property.height]-1;
-						for (p = 0; p < property.MAX; p++){
-							inventory[slot, p] = itemHeld[p];
+						// Otherwise there was more than one item in the area
+						else{
+							show_debug_message("Not enough space or too many items to drop. <LINE 155>")
 						}
-						IDindex++;
-						ds_grid_set_region(grid, column, row, column+itemWidth, row+itemHeight, IDindex);
 					}
-				}
-				// Pick up whatever was in the slot on the mouse
-				for (p = 0; p < property.MAX; p++){
-					itemHeld[p] = item[p];
 				}
 			}
 		}

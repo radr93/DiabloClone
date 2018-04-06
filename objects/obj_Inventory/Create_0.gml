@@ -19,11 +19,11 @@ height = sprite_get_height(spr_Inventory);
 columns = 10;
 rows = 6;
 totalCells = columns*rows;
-IDindex = 0; // increments each time an item gets placed in the grid (item uses this number as it's space ID)
+IDindex = 1; // increments each time an item gets placed in the grid (item uses this number as it's space ID)
 cellWidth = 32;
 cellHeight = 32;
 grid = ds_grid_create(columns, rows);
-ds_grid_clear(grid, -1); // set all slots to -1 ("empty")
+ds_grid_clear(grid, -1); // set all cells to -1 ("empty")
 
 // Get grid position
 gridXoffset = 32;
@@ -34,7 +34,7 @@ gridY = view_y+(yOffset+gridYoffset);
 // Initialize Inventory array to store item information in each cell
 for (c = 0; c < totalCells; c++){
 	for (p = 0; p < property.MAX; p += 1){
-		inventory[c, p] = -1; show_debug_message("inventory["+string(c)+","+string(p)+"]")
+		inventory[c, p] = -1;
 	}
 }
 

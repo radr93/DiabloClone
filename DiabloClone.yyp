@@ -79,14 +79,6 @@
             }
         },
         {
-            "Key": "0bdab9b2-5e64-41e1-abf5-01900e130411",
-            "Value": {
-                "id": "20a71d9a-f2e7-48f4-96c0-23ba83dc4a80",
-                "resourcePath": "objects\\UNUSEDobj_Camera1\\UNUSEDobj_Camera1.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "0caa7dc0-3d23-4da8-9e29-ce0ad951ec16",
             "Value": {
                 "id": "6b2a88bd-bb08-4dbe-a229-b655e9caa1c0",
@@ -242,7 +234,7 @@
             "Key": "33efe454-253b-4671-a717-7463dea4b527",
             "Value": {
                 "id": "03720eed-a594-4dca-8b60-2a87753eb98b",
-                "resourcePath": "scripts\\ds_grid_get_region\\ds_grid_get_region.yy",
+                "resourcePath": "scripts\\ds_grid_check_region\\ds_grid_check_region.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -495,14 +487,6 @@
             }
         },
         {
-            "Key": "857fde18-a514-4429-baa0-31a7adf21a8a",
-            "Value": {
-                "id": "3978ae9c-f288-4e87-8036-a8dcddefb0fd",
-                "resourcePath": "objects\\obj_Tooltip\\obj_Tooltip.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "858d6b4f-0bbb-4cac-b860-5a9afd54033d",
             "Value": {
                 "id": "7a975af7-4c39-49b2-a665-16d1f6575ca1",
@@ -743,6 +727,14 @@
             }
         },
         {
+            "Key": "c7bc34a7-51b5-4353-8214-220f84684bde",
+            "Value": {
+                "id": "a2d4337c-5d35-4be6-84e9-6e6b400ffe86",
+                "resourcePath": "scripts\\scr_DrawTooltip\\scr_DrawTooltip.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "dfa1f00d-26fe-4077-a5bc-c4b1bec60df6",
@@ -780,14 +772,6 @@
                 "id": "9effc699-af62-493b-97bd-2f66cf827b97",
                 "resourcePath": "views\\d941b7ea-77e5-4e27-9ab5-8ca6f62f1704.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "dc4be47a-0949-4cde-9a74-5302f49ad8c9",
-            "Value": {
-                "id": "ee100cde-fe68-42b2-9e39-05b6ce010420",
-                "resourcePath": "objects\\obj_InventoryButton\\obj_InventoryButton.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -959,6 +943,14 @@
             }
         },
         {
+            "Key": "fe4ca01c-a182-4ca9-842b-de8847886c42",
+            "Value": {
+                "id": "a0065e8d-a325-4274-a474-b346962cb027",
+                "resourcePath": "views\\fe4ca01c-a182-4ca9-842b-de8847886c42.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "fe79b343-1d23-4ea7-80fb-60f5041215aa",
             "Value": {
                 "id": "a8814d20-806e-4c1a-af30-82bf808bca11",
@@ -999,7 +991,8 @@
         "858d6b4f-0bbb-4cac-b860-5a9afd54033d",
         "6062ce19-df83-4eeb-92f0-9bcadbec845b",
         "010e1333-a19d-4629-a563-783dcaa3206d",
-        "33efe454-253b-4671-a717-7463dea4b527"
+        "33efe454-253b-4671-a717-7463dea4b527",
+        "c7bc34a7-51b5-4353-8214-220f84684bde"
     ],
     "tutorial": ""
 }

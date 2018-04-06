@@ -14,7 +14,7 @@ Table of Contents |
 	// 1.1 Item Rarities
 	enum rarity{
 	    normal = c_white,
-	    magic = c_aqua,
+	    magic = c_blue,
 	    rare = c_yellow,
 	    unique = c_orange,
 	}
@@ -22,9 +22,9 @@ Table of Contents |
 	// 1.2 Item Types
 	
 	enum type{
-		potion,
-		
+	
 	}
+	
 	
 	// 1.3 Item Properties
 	// Used to hold values for item properties in inventory/item held/ground item arrays

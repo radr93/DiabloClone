@@ -1,8 +1,8 @@
 {
-    "id": "33efe454-253b-4671-a717-7463dea4b527",
+    "id": "c7bc34a7-51b5-4353-8214-220f84684bde",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "ds_grid_get_region",
+    "name": "scr_DrawTooltip",
     "IsCompatibility": false,
     "IsDnD": false
 }

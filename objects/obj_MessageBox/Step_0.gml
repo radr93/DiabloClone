@@ -29,7 +29,7 @@ if (keyboard_check_pressed(input.toggleConsole)){
 		if (obj_Console.inputText != ""){
 			// Send the string to the new message queue
 			for (i = 0; i < messageQueueMax; i++){ // loop through the message queue for an empty spot
-				if (messageQueue[i, msg.text] == ""){ // if the current queue slot is empty
+				if (messageQueue[i, msg.text] == ""){ // if the current queue cell is empty
 					messageQueue[i, msg.time] = scr_GetTime(); // Get timestamp
 					messageQueue[i, msg.sender] = obj_PlayerParent.name; // Get sender
 					messageQueue[i, msg.text] = obj_Console.inputText; // Get text

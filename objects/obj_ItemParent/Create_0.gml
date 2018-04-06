@@ -10,3 +10,8 @@ image_yscale = .50
 for (p = 0; p < property.MAX; p++){
 	item[p] = -1;
 }
+
+// Assign random rarity
+
+item[property.rarity] = choose(rarity.normal, rarity.magic, rarity.rare, rarity.unique);
+item[property.tooltip] = "This is an item."

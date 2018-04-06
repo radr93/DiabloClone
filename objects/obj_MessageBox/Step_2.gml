@@ -33,8 +33,8 @@ if (messageQueue[0,msg.text] != ""){
 			else if (inputType == "/help"){
 				message[0,msg.text] = message[0,msg.time]+"["+message[0,msg.sender]+"]: "+messageQueue[m, msg.text];
 				for (h = 0; h < global.helpFileSize; h++){ // Loop through each entry in the help file
-					for (i = 0; i < obj_MessageBox.messageQueueMax; i++){ // Loop through the message queue for an empty slot
-						if (obj_MessageBox.messageQueue[i, msg.text] == ""){ // If current position in the queue slot is blank
+					for (i = 0; i < obj_MessageBox.messageQueueMax; i++){ // Loop through the message queue for an empty cell
+						if (obj_MessageBox.messageQueue[i, msg.text] == ""){ // If current position in the queue cell is blank
 							obj_MessageBox.messageQueue[i, msg.time] = scr_GetTime(); // Get timestamp
 							obj_MessageBox.messageQueue[i, msg.sender] = "HELP"; // Get sender
 							obj_MessageBox.messageQueue[i, msg.text] = scr_GetHelpFile(h); // Get text from help file
