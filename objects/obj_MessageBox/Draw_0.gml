@@ -7,14 +7,14 @@ if (showMessageBox == true){
 	// Draw Messages
 	var xx = x+8;
 	var yy = y+8;
-	// messageIndex = index in history array (increment up/down to see older or newer messages)
+	// messageIndex = index in history array (increment up/down by scrolling to see older or newer messages)
 	for (i = messageIndex-1; i >= messageIndex-messagesVisible; i--){
 		// Color Code all system messages yellow
 		if (message[i,msg.sender] == "[SYSTEM]: "){
 			draw_set_color(c_yellow)
 		}
 		// Color Code all user messages white
-		else if (message[i,msg.sender] == "["+obj_Player.name+"]: "){
+		else if (message[i,msg.sender] == "["+obj_PlayerParent.name+"]: "){
 			draw_set_color(c_white);
 		}
 		// Color Code all help messages aqua
@@ -23,7 +23,7 @@ if (showMessageBox == true){
 		}
 		// Color Code all other messages red
 		else{
-			draw_set_color(c_red);
+			draw_set_color(c_white);
 		}
 		// Draw the message
 		draw_text(xx, yy, message[i, msg.text]);

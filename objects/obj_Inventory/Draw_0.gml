@@ -1,8 +1,8 @@
 /// @description Draw inventory to screen
 
 // If there's an item on the cursor change the sprite otherwise use the default cursor
-	if (itemHeld[property.sprite] != -1) then cursor_sprite = itemHeld[property.sprite] else cursor_sprite = spr_Cursor;
-	
+if (itemHeld[property.sprite] != -1) then cursor_sprite = itemHeld[property.sprite] else cursor_sprite = spr_Cursor;
+
 // If the inventory is open
 if (showInventory = true){
 	
@@ -23,7 +23,7 @@ if (showInventory = true){
 				var spriteHeight = sprite_get_height(inventory[cellCount, property.sprite]);
 				draw_rectangle(xx, yy, xx+spriteWidth, yy+spriteHeight, false);
 				draw_set_alpha(1);
-				draw_sprite(inventory[cellCount, property.sprite], 0, xx, yy);
+				draw_sprite(inventory[cellCount, property.sprite], 0, xx+(spriteWidth/4), yy+spriteHeight/4);
 			}
 			//draw_set_color(c_white);
 			//draw_text(xx+4, yy+4, string(ds_grid_get(grid, c, r)));

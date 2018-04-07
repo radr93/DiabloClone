@@ -1,6 +1,6 @@
 /// @description Repeat Last Message
 
-// Update Position underneath of Message Box
+// Update Position to directly underneath of Message Box
 x = obj_MessageBox.x;
 y = obj_MessageBox.y+96;	// always keeps the console directly under the message box
 

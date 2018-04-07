@@ -7,7 +7,7 @@
         
     ],
     "filterType": "GMObject",
-    "folderName": "Amulet",
+    "folderName": "Neck",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

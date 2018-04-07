@@ -20,7 +20,7 @@ if (messageQueue[0,msg.text] != ""){
 			var inputType = scr_CheckInputType(messageQueue[m, msg.text]);
 			
 			// If it was a /debug command sent from the user
-			if (inputType == "/debug" and messageQueue[m, msg.sender] == obj_Player.name){
+			if (inputType == "/debug" and messageQueue[m, msg.sender] == obj_PlayerParent.name){
 				// Get debug return message
 				debugResult = scr_GetDebugCommand(newMessage);
 				// Change sender to system

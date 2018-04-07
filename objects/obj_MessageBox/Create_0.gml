@@ -5,8 +5,8 @@ showMessageBox = false;
 
 // Window drag variables (moves the box around the UI)
 draggingWindow = false;
-dragOffsetX = 0;
-dragOffsetY = 0;
+dragOffsetX = 0; // X+Y tell how far into the box you clicked so you
+dragOffsetY = 0; // can drag the window from where you grabbed
 
 // Get position
 var view_x = camera_get_view_x(obj_Camera.camera);

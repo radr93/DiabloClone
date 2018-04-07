@@ -5,6 +5,10 @@
 if (current_hour > 12){ // Set to PM if after noon and convert 24h to 12h
 	global.ampm = "pm"
 	global.hour = string(current_hour-12);
+	if (current_hour == 0){
+		global.ampm = "am"
+		global.hour = string(current_hour+12);
+	}
 }
 else{ // Set to AM if before noon
 	global.hour = string(current_hour);

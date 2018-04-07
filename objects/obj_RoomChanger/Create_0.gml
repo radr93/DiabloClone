@@ -1,6 +1,7 @@
-/// @description Length of time the room stays up
+/// @description Adjust timer
 
-// ime (in seconds)
+// Time to keep the room up(in seconds)
 var time = 2;
 
+// Set timer
 alarm[0] = (time*60);

@@ -18,8 +18,8 @@ draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 draw_set_font(global.messageFont);
 
-// Help
-global.helpFileSize = 15;
+// Help File
+global.helpFileSize = 16;
 
 // In-Game
 global.clickingSomething = false;	// Used to tell if you're clicking something such as a menu or wall

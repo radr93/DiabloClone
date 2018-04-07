@@ -6,8 +6,8 @@ ds_grid_check_region(grid, x, y, width, height);
 	grid	The index of the ds_grid.
 	xx		The x position of the left of the region in the grid to check.
 	yy 		The y position of the top of the region in the grid to check.
-	width 	The number of columns to search away from the x position.
-	height 	The number of rows to search away from the y position.
+	width 	The total width of space to check
+	height 	The total height of space to check
 
 This script checks each cell in a ds_grid in the given range.
 If all cells were empty, the script returns -1.
@@ -26,8 +26,8 @@ height = argument4;
 gridWidth = ds_grid_width(grid);
 gridHeight = ds_grid_height(grid);
 
-itemsInSpaceToOccupy = 0; // How many items are in the space you want t
-previousSpaceID = -1; // Stores the spaceID of the item of the last cell you checked (-1 = empty/no item)
+itemsInSpaceToOccupy = 0; // How many items are in the space you want to occupy
+previousSpaceID = -1; // Stores the spaceID of the last cell you checked (-1 = empty/no item)
 itemInSpaceID = -1; // Store the ID of the first item encountered 
 
 var xx = xStart;
@@ -36,7 +36,7 @@ show_debug_message("\n\nNEW ITERATION ####################");
 // Iterate through each cell specified
 for (h = 0; h < height; h++){
 	for (w = 0; w < width; w++){
-		show_debug_message("Searching Column "+string(w)+" Row "+string(h)+"....");
+		show_debug_message("\nSearching Column "+string(w)+" Row "+string(h)+"....");
 		// If the item is within the grid's boundaries
 		if (xStart + (width-1) < gridWidth and yStart + (height-1) < gridHeight){
 			// If there have been 0 or 1 items counted in the space so far
@@ -74,12 +74,12 @@ for (h = 0; h < height; h++){
 			show_debug_message(string(xx) + " + " + string((width-1)) + "<= " + string(gridWidth) + " and "+string(yy) + " + " + string((height-1)) + "<=" + string(gridHeight))
 			return(0);
 		}
-		show_debug_message("Checking next column..\n");
+		show_debug_message("Checking next column..");
 		xx++; // Check next column
 	}
 	show_debug_message("Now resetting columns and moving to next row..");
 	xx = argument1; // Reset Columns
-	yy++ // Check next row
+	yy++; // Check next row
 }
 
 // If there were no items in the space
