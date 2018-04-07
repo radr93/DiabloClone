@@ -16,69 +16,84 @@ If there was more than 1 item found in the space, returns 0.
 
 */
 
-var grid, xx, yy, width, height, totalCells, space, itemsInSpace, gridWidth, gridHeight, itemInSpaceID;
+var grid, xStart, yStart, width, height, gridWidth, gridHeight,  itemsInSpaceToOccupy, previousSpaceID, itemInSpaceID;
 
 grid = argument0;
-xx = argument1;
-yy = argument2;
+xStart = argument1;
+yStart = argument2;
 width = argument3;
 height = argument4;
 gridWidth = ds_grid_width(grid);
 gridHeight = ds_grid_height(grid);
 
-itemsInSpace = 0; // Increments if there are other items in the spaces checked
-space = -1; // Stores the spaceID of the item of the last cell you checked (-1 = empty/no item)
+itemsInSpaceToOccupy = 0; // How many items are in the space you want t
+previousSpaceID = -1; // Stores the spaceID of the item of the last cell you checked (-1 = empty/no item)
+itemInSpaceID = -1; // Store the ID of the first item encountered 
 
-var cellCount = 0;
-for (w = 0; w < width; w++){
-	for (h = 0; h < height; h++){
-		if (xx + (width-1) < gridWidth and yy + (height-1) < gridHeight){
-			// If previous cell checked was empty
-			if (space == -1){
-				space = ds_grid_get(grid, xx, yy); // Get spaceID for current cell
-				if (space != -1){ // If current cell isn't empty
-					itemsInSpace++; // Keep track
-					itemInSpaceID = space; // Get item's space ID
+var xx = xStart;
+var yy = yStart;
+show_debug_message("\n\nNEW ITERATION ####################");
+// Iterate through each cell specified
+for (h = 0; h < height; h++){
+	for (w = 0; w < width; w++){
+		show_debug_message("Searching Column "+string(w)+" Row "+string(h)+"....");
+		// If the item is within the grid's boundaries
+		if (xStart + (width-1) < gridWidth and yStart + (height-1) < gridHeight){
+			// If there have been 0 or 1 items counted in the space so far
+			if (itemsInSpaceToOccupy < 2){
+				// Update previous cell to current cell
+				previousSpaceID = ds_grid_get(grid, xx, yy); // Get spaceID for current cell
+				show_debug_message("ID of the cell being checked = "+string(previousSpaceID));
+				// If the current cell wasn't empty
+				if (previousSpaceID != -1 and previousSpaceID != itemInSpaceID){
+					show_debug_message("previous space was not empty...");
+					// Add to total number of items in the space
+					itemsInSpaceToOccupy++;
+					show_debug_message("itemsInSpaceToOccupy now = "+string(itemsInSpaceToOccupy));
+					// If that brings you to 1 item in the space
+					if (itemsInSpaceToOccupy == 1){
+						itemInSpaceID = previousSpaceID; // Get the item's space ID
+						show_debug_message("found 1 item so far. storing itemInSpaceID "+string(itemInSpaceID));
+					}
+					// Otherwise you have more than 1 item in the space, return 0 (no room)
+					else{
+						show_debug_message("Line 57, returning 0, more than 1 item in space (itemsInSpaceToOccupy = "+string(itemsInSpaceToOccupy)+")");
+						return(0);
+					}
 				}
 			}
-			else if (itemInSpaceID > 0){
-				space = ds_grid_get(grid, xx, yy); // Get spaceID for current cell
-				if (space != itemInSpaceID){ // If current cell isn't empty
-					itemsInSpace++; // Keep track
-					itemInSpaceID = space; // Get item's space ID
-				}
-			}
-			// If there was already 1 item found in the region
-			if (itemsInSpace == 1){
-				space = ds_grid_get(grid, xx, yy); // Get spaceID for current cell
-				if (space != -1 and space != itemInSpaceID){ // If current cell isn't empty
-					itemsInSpace++; // Keep track
-				}
-			}
-			// If there was more than one item in found in the region
+			// Otherwise there's 2 or more items in the space, return 0 (no room)
 			else{
-				break;
+				show_debug_message("Line 64, returning 0, more than 1 item in space (itemsInSpaceToOccupy = "+string(itemsInSpaceToOccupy)+")");
+				return(0);
 			}
 		}
+		// If outside of the boundaries, return 0 (no room)
+		else{
+			show_debug_message("Line 70, returning 0, item out of bounds.");
+			show_debug_message(string(xx) + " + " + string((width-1)) + "<= " + string(gridWidth) + " and "+string(yy) + " + " + string((height-1)) + "<=" + string(gridHeight))
+			return(0);
+		}
+		show_debug_message("Checking next column..\n");
 		xx++; // Check next column
 	}
+	show_debug_message("Now resetting columns and moving to next row..");
 	xx = argument1; // Reset Columns
 	yy++ // Check next row
 }
 
-// If the region is clear
-if (itemsInSpace == 0){
-	// Return a clear region
+// If there were no items in the space
+if (itemsInSpaceToOccupy == 0){
+	show_debug_message("Line 83, Space Free! Returning -1!")
 	return(-1);
 }
-
-// If there was 1 item found in the region
-else if (itemsInSpace == 1){
-	// Return item's spaceID from the grid
+// If there was one item or in the space
+else if (itemsInSpaceToOccupy == 1){
+	// Return the item's space ID
+	show_debug_message("Line 89, Only 1 item detected! Returning "+string(itemInSpaceID));
 	return(itemInSpaceID);
 }
 
-// Otherwise there was more than 1 item
 else{
-	return(0);
+	show_debug_message("Line 94, ds_grid_check_region() failed to check for space. itemsInSpaceToOccupy =="+string(itemsInSpaceToOccupy));
 }

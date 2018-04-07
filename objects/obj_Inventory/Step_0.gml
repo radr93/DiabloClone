@@ -60,10 +60,10 @@ if (showInventory == true){
 					if (itemHeld[property.item] != -1){
 						// Get the held item's dimensions and see if it fits
 						var itemHeldWidth, itemHeldHeight, spaceFree;
-						itemHeldWidth = (itemHeld[property.width]-1);
-						itemHeldHeight = (itemHeld[property.height]-1);
+						itemHeldWidth = (itemHeld[property.width]);
+						itemHeldHeight = (itemHeld[property.height]);
 						spaceFree = ds_grid_check_region(grid, column, row, itemHeldWidth, itemHeldHeight);
-						
+						show_debug_message("spaceFree = "+string(spaceFree)+" (line 66)")
 						// If there was only 1 item in the space to occupy
 						if (spaceFree > 0){
 							for (p = 0; p < property.MAX; p++){
@@ -74,19 +74,12 @@ if (showInventory == true){
 							// Empty the space that the item occupied
 							ds_grid_set_region(grid, spaceX, spaceY, spaceX+itemWidth, spaceY+itemHeight, -1);
 							// Mark space occupied by the item in the grid and assign the item its own unique space ID for each slot it covers in the grid
-							ds_grid_set_region(grid, column, row, column+itemHeldWidth, row+itemHeldHeight, IDindex)
+							ds_grid_set_region(grid, column, row, column+itemHeldWidth-1, row+itemHeldHeight-1, IDindex)
 							IDindex ++;
 						}
 						// Otherwise there was more than one item in the area
 						else{
 							show_debug_message("Not enough space or too many items to drop. <LINE 82>")
-						}
-						// If you were able to put the item held down
-						if (itemHeld[property.item] == -1){
-							// Pick up the item that was in the slot to the mouse
-							for (p = 0; p < property.MAX; p++){
-								itemHeld[p] = item[p];
-							}
 						}
 					}
 					// If you aren't holding anything
@@ -125,7 +118,7 @@ if (showInventory == true){
 						}
 						
 						// If there was only 1 item in the space to occupy
-						if (spaceFree > 0){
+						else if (spaceFree > 0){
 							// Get top-left cell index of the item taking up that slot 
 							var spaceX, spaceY, topLeftCell, item, itemWidth, itemHeight;
 							spaceX = ds_grid_value_x(grid, 0, 0, columns-1, rows-1, spaceFree); // where is the left of the object?
@@ -147,7 +140,7 @@ if (showInventory == true){
 							// Empty the space that the item occupied
 							ds_grid_set_region(grid, spaceX, spaceY, spaceX+itemWidth, spaceY+itemHeight, -1);
 							// Mark space occupied by the item in the grid and assign the item its own unique space ID for each slot it covers in the grid
-							ds_grid_set_region(grid, column, row, column+itemHeldWidth, row+itemHeldHeight, IDindex)
+							ds_grid_set_region(grid, column, row, column+itemHeldWidth-1, row+itemHeldHeight-1, IDindex)
 							IDindex ++;
 						}
 						// Otherwise there was more than one item in the area

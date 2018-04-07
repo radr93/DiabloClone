@@ -12,17 +12,18 @@ if (!global.clickingSomething and !inv.showInventory){
 			// If the current cell is empty
 			if (ds_grid_get(inv.grid, c, r) == -1){
 				var cell = (((r+1)*inv.columns)-((inv.columns-1)-c))-1;
-				show_debug_message("\n\ntrying to find space at cell# "+string(cell)+"...");
+				show_debug_message("\n\nitemParent - locating space at cell# "+string(cell)+"...");
 				
 				// Check the rest of the cells needed to put the item down
 				spaceFree = ds_grid_check_region(inv.grid, c, r, item[property.width], item[property.height]);
-				show_debug_message("... spaceFree returned: "+string(spaceFree))
+				show_debug_message("itemParent - ... spaceFree returned: "+string(spaceFree))
 				// If there was free space
 				if (spaceFree == -1){
 					// Put item into inventory
 					ds_grid_set_region(inv.grid, c, r, c+(item[property.width]-1), r+(item[property.height]-1), inv.IDindex);
-					show_debug_message("Setting region: Column "+string(c)+" to column "+string(c+(item[property.width]-1))+
-										" and row "+string(r)+" to row "+string(r+(item[property.height]-1))+" to "+string(inv.IDindex)+". \n\n");
+					show_debug_message("itemParent - Setting region: location c"+string(c)+", r"+string(r)+
+										" through to c"+string(c+(item[property.width]-1))+"r"+string(r+(item[property.height]-1))+
+										" to spaceID# "+string(inv.IDindex)+". \n");
 					inv.IDindex++;
 					for (p = 0; p < property.MAX; p++){
 						inv.inventory[cell, p] = item[p];

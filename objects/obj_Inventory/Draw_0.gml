@@ -25,8 +25,8 @@ if (showInventory = true){
 				draw_set_alpha(1);
 				draw_sprite(inventory[cellCount, property.sprite], 0, xx, yy);
 			}
-			draw_set_color(c_white);
-			draw_text(xx+4, yy+4, string(ds_grid_get(grid, c, r)));
+			//draw_set_color(c_white);
+			//draw_text(xx+4, yy+4, string(ds_grid_get(grid, c, r)));
 			xx += 32;
 			cellCount++;
 		}
@@ -46,12 +46,17 @@ if (showInventory = true){
 			var spaceID = ds_grid_get(grid, column, row); // -1 = empty else number is unique for each item in inventory
 			
 			// If you're holding an item, draw a square across each occupied space
-			draw_set_color(c_olive);
+			draw_set_color(c_green);
 			draw_set_alpha(0.15);
 			if (itemHeld[property.item] != -1){
-				var spriteWidth = sprite_get_width(itemHeld[property.sprite]);
-				var spriteHeight = sprite_get_height(itemHeld[property.sprite]);
-				draw_rectangle(gridSnapX, gridSnapY, gridSnapX+spriteWidth, gridSnapY+spriteHeight, false);
+				var spriteWidth = itemHeld[property.width];
+				var spriteHeight = itemHeld[property.height];
+				var spaceFree = ds_grid_check_region(grid, column, row, spriteWidth, spriteHeight);
+				if (spaceFree != 0){
+					spriteWidth = sprite_get_width(itemHeld[property.sprite]);
+					spriteHeight = sprite_get_height(itemHeld[property.sprite]); 
+					draw_rectangle(gridSnapX, gridSnapY, gridSnapX+spriteWidth, gridSnapY+spriteHeight, false);
+				}
 			}
 			// Otherwise draw 1 square on the mouse
 			else{
