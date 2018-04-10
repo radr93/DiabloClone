@@ -4,15 +4,20 @@
 free = true;
 
 // Buttons that open menus
-toggleConsole = vk_enter;
 toggleMessageBox = ord("M");
 toggleInventory = ord("I");
 
 // Literal Keyboard Keys
 escape = vk_escape;
+enter = vk_enter;
 space = vk_space;
 tab = vk_tab;
 shift = vk_shift;
+
+upArrow = vk_up;
+downArrow = vk_down;
+leftArrow = vk_left;
+rightArrow = vk_right;
 
 // Mouse
 leftClick = mb_left;

@@ -1,7 +1,7 @@
 /// @description Create Mouse Click (player movement)
 
 // As long as you're not in a set-up or title room
-if (room != __init__ and room != rm_SplashScreen){
+if (global.launchUI == true){
 	// If you click somewhere
 	if (mouse_check_button(input.leftClick)){
 		// If you're not already clicking something and aren't holding shift

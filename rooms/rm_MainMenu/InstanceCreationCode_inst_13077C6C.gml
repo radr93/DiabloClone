@@ -1,0 +1,1 @@
+text = "QUIT GAME";

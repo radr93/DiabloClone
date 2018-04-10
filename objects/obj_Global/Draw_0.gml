@@ -1,5 +1,7 @@
 /// @description Debug Info
 
+view_x = 0
+view_y = 0
 // Display Information if user enters command /debug list
 if (debugOpen){
 	var view_x = camera_get_view_x(obj_Camera.camera);

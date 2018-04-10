@@ -6,18 +6,13 @@ var view_y = camera_get_view_y(obj_Camera.camera);
 x = view_x+xOffset;
 y = view_y+yOffset;
 
-// Toggle Force Closes (first the console then the message box)
-if (keyboard_check_pressed(input.escape)){
-	if (instance_exists(obj_Console)) then instance_destroy(obj_Console); else showMessageBox = false;
-}
-
 // Toggle message box on and off
 if (keyboard_check_pressed(input.toggleMessageBox) and input.free){
 	if (showMessageBox == true) then showMessageBox = false; else showMessageBox = true;
 }
 
 // Toggle console and get messages from console
-if (keyboard_check_pressed(input.toggleConsole)){
+if (keyboard_check_pressed(input.enter)){
 	// If console isn't open
 	if (!instance_exists(obj_Console)){
 		// Open console and message box if it isn't already
@@ -31,7 +26,7 @@ if (keyboard_check_pressed(input.toggleConsole)){
 			for (i = 0; i < messageQueueMax; i++){ // loop through the message queue for an empty spot
 				if (messageQueue[i, msg.text] == ""){ // if the current queue cell is empty
 					messageQueue[i, msg.time] = scr_GetTime(); // Get timestamp
-					messageQueue[i, msg.sender] = obj_PlayerParent.name; // Get sender
+					messageQueue[i, msg.sender] = obj_PlayerController.stats[stat.name]; // Get sender
 					messageQueue[i, msg.text] = obj_Console.inputText; // Get text
 					consoleStringPrevious = obj_Console.inputText; // hold previously entered string (can be retrieved with tab when console is open)
 					break; // stop searching the queue for a blank spot (you just found one)

@@ -1,4 +1,5 @@
 /// @description Initialize Variables
 
 event_inherited();
-sprite = spr_Mage;
+var p = obj_PlayerController;
+p.stats[stat.sprite] = spr_Mage;

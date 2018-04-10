@@ -15,13 +15,14 @@ var textToParse = argument0;
 var debug = "/debug";
 
 // Valid commands
-var create, list, reset, quit, rename;
+var create, list, reset, quit, rename, level;
 
 create = "create";	// create an object at mouse_x and mouse_y
 list = "list";		// show/hide the debug list
 reset = "reset";	// reset the game or specific object
 quit = "quit";		// quit the game
 rename = "rename";	// rename the player
+level = "level";  // level the player
 
 
 // Remove "/debug " from textToParse and search for a valid command
@@ -94,8 +95,17 @@ else if (string_pos(rename, textToParse) == 1){
 	// Remove "rename " from textToParse
 	textToParse = string_delete(textToParse, 1, string_length(rename)+1);
 	// Rename the player
-	obj_PlayerParent.name = textToParse;
+	obj_PlayerController.stats[stat.name] = textToParse;
 	return("Renamed player to "+textToParse+".")
+}
+
+// Level Character Command
+else if (string_pos(level, textToParse) == 1){
+	// Remove "level " from textToParse
+	textToParse = string_delete(textToParse, 1, string_length(level)+1);
+	textToParse = real(string_digits(textToParse));
+	obj_PlayerController.stats[stat.level] = textToParse;
+	return("Leveled the player to "+string(textToParse)+".");
 }
 
 // Invalid Command

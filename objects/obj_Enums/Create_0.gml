@@ -69,19 +69,27 @@ Table of Contents |
 
 // 2.0 Player ////////
 	// 2.1 Classes
-	enum class{
+	enum classes{
 		mage,
 		ranger,
 		warrior
 	}
-	// 2.1 Stats
+	// 2.2 Stats
 	enum stat{
+		name,
+		class,
+		sprite,
+		
 		currentHealth,
 		maxHealth,
 		currentMana,
 		maxMana,
+		
+		level,
 		currentExp,
 		expToLevel,
+		statPoints,
+		skillPoints,
 		
 		strength,
 		dexterity,
@@ -91,5 +99,7 @@ Table of Contents |
 		coldResist,
 		fireResist,
 		lightResist,
-		poisonResist
+		poisonResist,
+		
+		MAX
 	}

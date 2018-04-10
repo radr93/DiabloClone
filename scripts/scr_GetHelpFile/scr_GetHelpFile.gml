@@ -31,8 +31,9 @@ output[9] =  "object at mouse_x and mouse_y"
 output[10] = "--accepted targets:"
 output[11] = "---object - an object from the resource tree"
 output[12] = "/debug rename (new name) - rename the player" 
-output[13] = "Remember to exercise care when creating and"
-output[14] = "resetting live game objects. Crashes and"
-output[15] = "other unexpected behaviour may result."
+output[13] = "/debug level (level) - level up the player" 
+output[14] = "Remember to exercise care when creating and"
+output[15] = "resetting live game objects. Crashes and"
+output[16] = "other unexpected behaviour may result."
 
 return(output[argument0])

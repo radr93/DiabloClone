@@ -14,7 +14,7 @@ if (showMessageBox == true){
 			draw_set_color(c_yellow)
 		}
 		// Color Code all user messages white
-		else if (message[i,msg.sender] == "["+obj_PlayerParent.name+"]: "){
+		else if (message[i,msg.sender] == "["+obj_PlayerController.stats[stat.name]+"]: "){
 			draw_set_color(c_white);
 		}
 		// Color Code all help messages aqua

@@ -8,4 +8,4 @@ item[property.item] = "Poleaxe";
 item[property.sprite] = spr_Poleaxe;
 item[property.width] = 2;
 item[property.height] = 4;
-item[property.tooltip] = "Poleaxe of the Tiger\n12 to 15 damage\nRequires 35 Strength\nRequires 45 Dexterity\nRequires Level 14\nVery Slow Attack Speed\n\n+12 Dexterity"
+item[property.tooltip] = "Poleaxe\n12 to 15 damage\nRequires 35 Strength\nRequires 45 Dexterity\nVery Slow Attack Speed\n"
