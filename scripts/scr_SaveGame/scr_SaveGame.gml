@@ -53,7 +53,7 @@ ds_map_destroy(itemHeldData);
 
 // Write obj_PlayerController[s] stats to ds_map, then write to string and save .ini
 var playerData = ds_map_create();
-for (p = 0; p <  property.MAX; p++){
+for (p = 0; p <  stat.MAX; p++){
 	playerData[? p] = obj_PlayerController.stats[p];
 }
 var playerDataString = ds_map_write(playerData);

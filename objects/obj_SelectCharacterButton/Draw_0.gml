@@ -8,15 +8,7 @@ if (stats[stat.sprite] != undefined){
 	draw_sprite(stats[stat.sprite], 0, x+32, y+32);
 	// Draw the character's name, level and class
 	draw_text(x+80, y+16, stats[stat.name]);
-	if (stats[stat.class] == classes.ranger){
-		draw_text(x+80, y+32, "Level "+string(stats[stat.level])+" Ranger");
-	}
-	else if (stats[stat.class] == classes.mage){
-		draw_text(x+80, y+32, "Level "+string(stats[stat.level])+" Mage");
-	}
-	else if (stats[stat.class] == classes.warrior){
-		draw_text(x+80, y+32, "Level "+string(stats[stat.level])+" Warrior");
-	}
+	draw_text(x+80, y+32, "Level " + string(stats[stat.level]) + " " + stats[stat.classString]);
 }
 // Draw rectangle around box if selected
 //draw_text(32, 32, "selected = "+string(obj_SelectCharacterController.selected))

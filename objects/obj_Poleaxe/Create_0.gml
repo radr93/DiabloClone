@@ -4,8 +4,12 @@
 event_inherited();
 
 // Short Sword specific variables
-item[property.item] = "Poleaxe";
+item[property.name] = "Poleaxe";
 item[property.sprite] = spr_Poleaxe;
+item[property.object] = obj_Poleaxe;
 item[property.width] = 2;
 item[property.height] = 4;
-item[property.tooltip] = "Poleaxe\n12 to 15 damage\nRequires 35 Strength\nRequires 45 Dexterity\nVery Slow Attack Speed\n"
+item[property.minDamage] = irandom_range(12, 14);
+item[property.maxDamage] = irandom_range(26, 38);
+item[property.reqStrength] = 35;
+item[property.reqDexterity] = 25;

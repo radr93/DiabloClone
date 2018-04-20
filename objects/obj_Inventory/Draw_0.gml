@@ -16,14 +16,19 @@ if (showInventory = true){
 	var cellCount = 0;
 	for (r = 0; r < rows; r++){
 		for (c = 0; c < columns; c++){
-			if (inventory[cellCount, property.item] != -1){
+			if (inventory[cellCount, property.name] != -1){
 				draw_set_color(inventory[cellCount, property.rarity]);
 				draw_set_alpha(0.15);
 				var spriteWidth = sprite_get_width(inventory[cellCount, property.sprite]);
 				var spriteHeight = sprite_get_height(inventory[cellCount, property.sprite]);
 				draw_rectangle(xx, yy, xx+spriteWidth, yy+spriteHeight, false);
 				draw_set_alpha(1);
-				draw_sprite(inventory[cellCount, property.sprite], 0, xx+(spriteWidth/4), yy+spriteHeight/4);
+				if (inventory[cellCount, property.ethereal] == false){
+					draw_sprite(inventory[cellCount, property.sprite], 0, xx+(spriteWidth/4), yy+spriteHeight/4);
+				}
+				else{
+					draw_sprite_ext(inventory[cellCount, property.sprite], 0, xx+(spriteWidth/4), yy+spriteHeight/4, 1, 1, 0, c_white, 0.5);
+				}
 			}
 			//draw_set_color(c_white);
 			//draw_text(xx+4, yy+4, string(ds_grid_get(grid, c, r)));
@@ -48,7 +53,7 @@ if (showInventory = true){
 			// If you're holding an item, draw a square across each occupied space
 			draw_set_color(c_green);
 			draw_set_alpha(0.15);
-			if (itemHeld[property.item] != -1){
+			if (itemHeld[property.name] != -1){
 				var spriteWidth = itemHeld[property.width];
 				var spriteHeight = itemHeld[property.height];
 				var spaceFree = ds_grid_check_region(grid, column, row, spriteWidth, spriteHeight);
@@ -59,7 +64,7 @@ if (showInventory = true){
 				}
 			}
 			// Otherwise draw 1 square on the mouse
-			else{
+			else if (spaceID == -1){
 				draw_rectangle(gridSnapX, gridSnapY, gridSnapX+cellWidth, gridSnapY+cellHeight, false);
 			}
 			draw_set_alpha(1);
@@ -72,12 +77,10 @@ if (showInventory = true){
 				spaceX = ds_grid_value_x(grid, 0, 0, columns-1, rows-1, spaceID); // where is the left of the object?
 				spaceY = ds_grid_value_y(grid, 0, 0, columns-1, rows-1, spaceID); // where is the top of the object?
 				topLeftCell = (((spaceY+1)*columns)-((columns-1)-spaceX))-1; // which cell the top left of the object is in
-				
 				// Copy that item's properties to a temporary array
 				for (p = 0; p < property.MAX; p++){
 					item[p] = inventory[topLeftCell, p];
 				}
-				
 				// Draw the tooltip
 				scr_DrawTooltip(item[property.rarity], item[property.tooltip]);
 			}			

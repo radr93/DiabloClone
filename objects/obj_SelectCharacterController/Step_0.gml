@@ -10,20 +10,24 @@ if (keyboard_check_pressed(input.enter)){
 if (keyboard_check_pressed(input.upArrow)){
 	if (selected == 0 and global.saveSlot[6] != "") then selected = 6;
 	else if (selected == 1 and global.saveSlot[7] != "") then selected = 7;
-	else selected -= 2;
+	else if (selected > 1) then selected -= 2;
 }
 else if (keyboard_check_pressed(input.downArrow)){
 	if (selected == 6) then selected = 0;
 	else if (selected == 7) then selected = 1;
-	else  if global.saveSlot[selected+2] != "" then selected += 2;
+	else if (selected < 6){
+		if (global.saveSlot[selected+2] != "") then selected += 2;
+	}
 }
 else if (keyboard_check_pressed(input.leftArrow)){
-	if (selected == 0) then selected = 7;
-	else selected -= 1;
+	if (selected == 0 and global.saveSlot[7] != "") then selected = 7;
+	else if (selected > 0) then selected -= 1;
 }
 else if (keyboard_check_pressed(input.rightArrow)){
 	if (selected == 7) then selected = 0;
-	else if global.saveSlot[selected+1] != "" then selected += 1;
+	else if (selected < 7){
+		if (global.saveSlot[selected+1] != "") then selected += 1;
+	}
 }
 
 // Load Game

@@ -4,8 +4,12 @@
 event_inherited();
 
 // Short Sword specific variables
-item[property.item] = "Crystal Sword";
+item[property.name] = "Crystal Sword";
 item[property.sprite] = spr_CrystalSword;
+item[property.object] = obj_CrystalSword;
 item[property.width] = 2;
 item[property.height] = 3;
-item[property.tooltip] = "Crystal Sword\n12 to 17 damage\nRequires 25 Strength\nRequires 45 Dexterity\nFast Attack Speed";
+item[property.minDamage] = irandom_range(8, 12);
+item[property.maxDamage] = irandom_range(16, 18);
+item[property.reqStrength] = 25;
+item[property.reqDexterity] = 20;

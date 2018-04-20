@@ -6,13 +6,8 @@ if (global.saveSlotsUsed > 0 and clicking == true){
 	var name = global.saveSlot[obj_SelectCharacterController.selected]
 	// Delete directory, edit global variables and save changes
 	directory_destroy("save/"+name);
-	global.saveSlotsUsed--;
 	global.saveSlot[selection] = "";
-	ini_open("save/global/global.ini");
-	ini_write_real("Save", "Save Slots Used", global.saveSlotsUsed);
-	ini_write_string("Save", "Save Slot"+string(selection), global.saveSlot[selection]);
-	ini_close();
-	show_debug_message("DELETED CHARACTER");
+	global.saveSlotsUsed--;
 	for (s = 0; s < global.saveSlotsMax; s++){
 		if (global.saveSlot[s] == "" and s+1 < global.saveSlotsMax){
 			if (global.saveSlot[s+1] != ""){
@@ -26,5 +21,11 @@ if (global.saveSlotsUsed > 0 and clicking == true){
 			}
 		}
 	}
+	ini_open("save/global/global.ini");
+	ini_write_real("Save", "Save Slots Used", global.saveSlotsUsed);
+	for (s = 0; s < global.saveSlotsMax; s++){
+		ini_write_string("Save", "Save Slot"+string(s), global.saveSlot[s]);
+	}
+	ini_close();
 	room_restart();
 }

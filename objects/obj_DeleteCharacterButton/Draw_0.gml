@@ -1,7 +1,7 @@
 /// @description Draw Button and text
 
 // Fade if at max save slots used
-if (global.saveSlotsUsed == 0){
+if (global.saveSlotsUsed > 0){
 	draw_set_alpha(1);
 }
 else{

@@ -4,8 +4,10 @@
 event_inherited();
 
 // Short Sword specific variables
-item[property.item] = "Kite Shield";
+item[property.name] = "Kite Shield";
 item[property.sprite] = spr_KiteShield;
+item[property.object] = obj_KiteShield;
 item[property.width] = 2;
 item[property.height] = 3;
-item[property.tooltip] = "Kite Shield\n82 defence\n25% Chance to Block\nRequires 45 Strength\n";
+item[property.defence] = irandom_range(20, 30);
+item[property.reqStrength] = 35;

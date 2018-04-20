@@ -32,68 +32,54 @@ itemInSpaceID = -1; // Store the ID of the first item encountered
 
 var xx = xStart;
 var yy = yStart;
-show_debug_message("\n\nNEW ITERATION ####################");
 // Iterate through each cell specified
 for (h = 0; h < height; h++){
 	for (w = 0; w < width; w++){
-		show_debug_message("\nSearching Column "+string(w)+" Row "+string(h)+"....");
 		// If the item is within the grid's boundaries
 		if (xStart + (width-1) < gridWidth and yStart + (height-1) < gridHeight){
 			// If there have been 0 or 1 items counted in the space so far
 			if (itemsInSpaceToOccupy < 2){
 				// Update previous cell to current cell
 				previousSpaceID = ds_grid_get(grid, xx, yy); // Get spaceID for current cell
-				show_debug_message("ID of the cell being checked = "+string(previousSpaceID));
 				// If the current cell wasn't empty
 				if (previousSpaceID != -1 and previousSpaceID != itemInSpaceID){
-					show_debug_message("previous space was not empty...");
 					// Add to total number of items in the space
 					itemsInSpaceToOccupy++;
-					show_debug_message("itemsInSpaceToOccupy now = "+string(itemsInSpaceToOccupy));
 					// If that brings you to 1 item in the space
 					if (itemsInSpaceToOccupy == 1){
 						itemInSpaceID = previousSpaceID; // Get the item's space ID
-						show_debug_message("found 1 item so far. storing itemInSpaceID "+string(itemInSpaceID));
 					}
 					// Otherwise you have more than 1 item in the space, return 0 (no room)
 					else{
-						show_debug_message("Line 57, returning 0, more than 1 item in space (itemsInSpaceToOccupy = "+string(itemsInSpaceToOccupy)+")");
 						return(0);
 					}
 				}
 			}
 			// Otherwise there's 2 or more items in the space, return 0 (no room)
 			else{
-				show_debug_message("Line 64, returning 0, more than 1 item in space (itemsInSpaceToOccupy = "+string(itemsInSpaceToOccupy)+")");
 				return(0);
 			}
 		}
 		// If outside of the boundaries, return 0 (no room)
-		else{
-			show_debug_message("Line 70, returning 0, item out of bounds.");
-			show_debug_message(string(xx) + " + " + string((width-1)) + "<= " + string(gridWidth) + " and "+string(yy) + " + " + string((height-1)) + "<=" + string(gridHeight))
+		else{			
 			return(0);
 		}
-		show_debug_message("Checking next column..");
 		xx++; // Check next column
 	}
-	show_debug_message("Now resetting columns and moving to next row..");
 	xx = argument1; // Reset Columns
 	yy++; // Check next row
 }
 
 // If there were no items in the space
 if (itemsInSpaceToOccupy == 0){
-	show_debug_message("Line 83, Space Free! Returning -1!")
 	return(-1);
 }
 // If there was one item or in the space
 else if (itemsInSpaceToOccupy == 1){
 	// Return the item's space ID
-	show_debug_message("Line 89, Only 1 item detected! Returning "+string(itemInSpaceID));
 	return(itemInSpaceID);
 }
 
-else{
+else{ // Script Failed
 	show_debug_message("Line 94, ds_grid_check_region() failed to check for space. itemsInSpaceToOccupy =="+string(itemsInSpaceToOccupy));
 }

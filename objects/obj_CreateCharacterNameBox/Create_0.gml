@@ -1,8 +1,7 @@
 /// @description Initialize Variables
 
 // Text Input Variables
-keyboard_string = ""; // Discard previous keyboard inputs
-inputText = ""; // The text that is input by the user
+keyboard_string = ""; // The text that is input by the user
 cursor = "|"; // Keeps track of your position within the string
 blinkSpeed = 20; // How quickly the cursor blinks (60 = 1/sec)
 

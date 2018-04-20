@@ -4,8 +4,10 @@
 event_inherited();
 
 // Short Sword specific variables
-item[property.item] = "Buckler";
+item[property.name] = "Buckler";
 item[property.sprite] = spr_Buckler;
+item[property.object] = obj_Buckler;
 item[property.width] = 2;
 item[property.height] = 2;
-item[property.tooltip] = "Buckler\n32 defence\n15% Chance to Block\nRequires 15 Strength\n";
+item[property.defence] = irandom_range(9, 15);
+item[property.reqStrength] = 15;

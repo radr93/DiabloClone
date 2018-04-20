@@ -7,7 +7,8 @@
         "827822ae-82fe-4d66-9406-3b4e1403ad27",
         "425479fc-e352-4a51-b6ca-c4b7bb21ceb8",
         "a8d895e5-bf92-4402-bb78-a4e514adef73",
-        "cbf9fac3-d27d-478a-96ee-815cd51f0a92"
+        "cbf9fac3-d27d-478a-96ee-815cd51f0a92",
+        "eb738f4f-0852-49f3-87fa-6fbb2d64a396"
     ],
     "filterType": "GMObject",
     "folderName": "Load Character",

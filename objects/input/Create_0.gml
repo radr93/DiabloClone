@@ -6,6 +6,7 @@ free = true;
 // Buttons that open menus
 toggleMessageBox = ord("M");
 toggleInventory = ord("I");
+toggleStats = ord("C");
 
 // Literal Keyboard Keys
 escape = vk_escape;

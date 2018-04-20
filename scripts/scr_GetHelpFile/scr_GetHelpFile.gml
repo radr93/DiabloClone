@@ -32,8 +32,10 @@ output[10] = "--accepted targets:"
 output[11] = "---object - an object from the resource tree"
 output[12] = "/debug rename (new name) - rename the player" 
 output[13] = "/debug level (level) - level up the player" 
-output[14] = "Remember to exercise care when creating and"
-output[15] = "resetting live game objects. Crashes and"
-output[16] = "other unexpected behaviour may result."
+output[14] = "/debug experience (number) - gain x amount of exp"
+output[15] = "/debug mf (number) - set player magic find to x"
+output[16] = "Remember to exercise care when creating and"
+output[17] = "resetting live game objects. Crashes and"
+output[18] = "other unexpected behaviour may result."
 
 return(output[argument0])

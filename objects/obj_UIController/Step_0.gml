@@ -5,7 +5,12 @@ view_y = camera_get_view_y(obj_Camera.camera);
 
 // Toggle Force Closes (first the inventory then the console then the message box then open save menu)
 if (keyboard_check_pressed(input.escape)){
-	if (obj_Inventory.showInventory) then obj_Inventory.showInventory = false;
+	if (obj_Inventory.showInventory){
+		obj_Inventory.showInventory = false;
+		if (instance_exists(obj_StatScreen)){
+			instance_destroy(obj_StatScreen);
+		}
+	}
 	else if (instance_exists(obj_Console)) then instance_destroy(obj_Console);
 	else if (obj_MessageBox.showMessageBox) then obj_MessageBox.showMessageBox = false;
 	// Toggle Save Menu
@@ -16,6 +21,16 @@ if (keyboard_check_pressed(input.escape)){
 	else{
 		showSaveMenu = false;
 		input.free = true;
+	}
+}
+
+// Toggle Stats Screen
+if (keyboard_check_pressed(input.toggleStats) and input.free){
+	if (!instance_exists(obj_StatScreen)){
+		instance_create_layer(view_x, view_y, "Highest", obj_StatScreen);
+	}
+	else{
+		instance_destroy(obj_StatScreen);
 	}
 }
 
@@ -95,6 +110,7 @@ if (showSaveMenu = true){
 		// Return to Game
 		else if (buttonSelected == selection[2]){
 			showSaveMenu = false;
+			input.free = true;
 		}
 	}
 }

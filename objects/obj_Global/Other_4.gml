@@ -4,6 +4,6 @@
 if (global.launchUI == true){
 	if (!instance_exists(obj_UIController)){
 		// Launch UI controller
-		instance_create_layer(x, y, "Controllers", obj_UIController); // Launch the UI
+		instance_create_layer(x, y, "Highest", obj_UIController); // Launch the UI
 	}
 }

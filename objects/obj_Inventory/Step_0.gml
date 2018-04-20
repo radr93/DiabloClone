@@ -15,15 +15,6 @@ if (keyboard_check_pressed(input.toggleInventory) and input.free){
 
 // If the inventory is open
 if (showInventory == true){
-
-	// Inventory Clicked on flag
-	if (mouse_x >= x and mouse_x <= (x+width)){
-		if (mouse_y >= y and mouse_y <= (y+height)){
-			if (mouse_check_button_pressed(input.leftClick)){
-				global.clickingSomething = true;
-			}
-		}
-	}
 	
 	// Check if inside the inventory grid
 	if (mouse_x >= gridX and mouse_x < (gridX+(cellWidth*columns))){
@@ -57,7 +48,7 @@ if (showInventory == true){
 				// If you click
 				if (mouse_check_button_pressed(input.leftClick)){
 					// If you're holding something
-					if (itemHeld[property.item] != -1){
+					if (itemHeld[property.name] != -1){
 						// Get the held item's dimensions and see if it fits
 						var itemHeldWidth, itemHeldHeight, spaceFree;
 						itemHeldWidth = (itemHeld[property.width]);
@@ -83,7 +74,7 @@ if (showInventory == true){
 						}
 					}
 					// If you aren't holding anything
-					else if (itemHeld[property.item] == -1){
+					else if (itemHeld[property.name] == -1){
 						// Pick up the item that was in the slot to mouse and empty the inventory slot
 						for (p = 0; p < property.MAX; p++){
 							itemHeld[p] = item[p];
@@ -99,7 +90,7 @@ if (showInventory == true){
 				// If you click
 				if (mouse_check_button_pressed(input.leftClick)){
 					// If you're holding something
-					if (itemHeld[property.item] != -1){
+					if (itemHeld[property.name] != -1){
 						// Get the held item's dimensions and see if it fits
 						var itemHeldWidth, itemHeldHeight, spaceFree;
 						itemHeldWidth = (itemHeld[property.width]);

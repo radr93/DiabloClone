@@ -4,8 +4,12 @@
 event_inherited();
 
 // Short Sword specific variables
-item[property.item] = "Axe";
+item[property.name] = "Axe";
 item[property.sprite] = spr_Axe;
+item[property.object] = obj_Axe;
 item[property.width] = 2;
 item[property.height] = 3;
-item[property.tooltip] = "Axe\n18 to 24 damage\nRequires 55 Strength\nRequires 30 Dexterity\nSlow Attack Speed"
+item[property.minDamage] = irandom_range(2, 4);
+item[property.maxDamage] = irandom_range(6, 8);
+item[property.reqStrength] = 15;
+item[property.reqDexterity] = 12;

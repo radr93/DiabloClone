@@ -4,6 +4,8 @@
 event_inherited();
 
 // Leather Cap specific variables
-item[property.item] = "Bone Helm";
+item[property.name] = "Bone Helm";
 item[property.sprite] = spr_BoneHelm;
-item[property.tooltip] = "Bone Helm\n20 defence\n7 of 15 durability\nRequires 22 Strength\n";
+item[property.object] = obj_BoneHelm;
+item[property.defence] = irandom_range(17, 27);
+item[property.reqStrength] = 20;

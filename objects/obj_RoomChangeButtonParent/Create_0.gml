@@ -9,5 +9,5 @@ variable "roomTarget" like so:
 */
 
 
-// True if you click on the button
+// Are you clicking on the button?
 clicking = false;

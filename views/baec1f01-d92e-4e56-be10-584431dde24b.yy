@@ -7,7 +7,7 @@
         "e408c375-fe15-42e2-b8e6-c6a5678bbf41"
     ],
     "filterType": "GMSprite",
-    "folderName": "Character Sheet",
+    "folderName": "Stat Screen",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
