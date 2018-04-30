@@ -10,63 +10,66 @@ selected.
 */
 
 var pick, drop;
-pick = choose(1, 2, 3, 4, 5);
+pick = choose(1, 2, 3, 4, 5, 6);
 
-// No Drop! (picks 1-2)
-if (pick == 1){
-	return(-1);
-}
-else if (pick == 2){
+// No Drop! (picks 1-3)
+if (pick < 4){
 	return(-1);
 }
 
-// Drop from misc loot table (picks 3-4)
-else if (pick == 3){
-	drop = scr_TreasureClass0();
-	return(drop);
-}
+// Drop a potion or gold (pick 4)
 else if (pick == 4){
-	drop = scr_TreasureClass0();
-	return(drop);
+	pick = choose(1, 2);
+	if (pick == 1){
+		return(obj_MinorHealth);
+	}
+	else{
+		return(obj_MinorMana);
+	}
 }
 
 // Drop an item
 else if (pick == 5){
-	pick = choose(1, 2, 3, 4, 5, 6, 7);
+	pick = choose(1, 2, 3, 4, 5, 6, 7, 8, 9);
 	// Armor 
 	if (pick == 1){
 		return(obj_Helm);
 	}
-
 	else if (pick == 2){
 		return(obj_Poleaxe);
 	}
-
 	else if (pick == 3){
 		return(obj_CrystalSword);
 	}
-
 	else if (pick == 4){
 		return(obj_KiteShield);
 	}
-
 	else if (pick == 5){
 		return(obj_Amulet);
 	}
-
-	// Weapons
 	else if (pick == 6){
 		return(obj_Ring);
 	}
-
 	else if (pick == 7){
 		return(obj_Gauntlets);
 	}
-	else{
-		show_debug_message("scr_TreasureClass1 didn't return a drop! Pick # was "+string(pick))
+	else if (pick == 8){
+		return(obj_ChainMail);
+	}
+	else if (pick == 9){
+		if (0.20 >= random(1)){
+			return(obj_CehRune);
+		}
+		else if (0.20 >= random(1)){
+			return(obj_DehRune);
+		}
+		else{
+			return(-1);
+		}
 	}
 }
 
-else{
-	show_debug_message("scr_TreasureClass1 didn't return a drop! Pick # was "+string(pick))
+else if (pick == 6){
+	drop = scr_TreasureClass0();
+	return(drop);
 }

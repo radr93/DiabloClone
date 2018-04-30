@@ -57,16 +57,26 @@ if (showInventory == true){
 						show_debug_message("spaceFree = "+string(spaceFree)+" (line 66)")
 						// If there was only 1 item in the space to occupy
 						if (spaceFree > 0){
-							for (p = 0; p < property.MAX; p++){
-								inventory[topLeftCell, p] = -1;
-								inventory[cell, p] = itemHeld[p];
-								itemHeld[p] = item[p];
+							// Socket with gems/runes if those are held
+							if (itemHeld[property.subType] == misc.rune){
+								
+								
+								
+								
 							}
-							// Empty the space that the item occupied
-							ds_grid_set_region(grid, spaceX, spaceY, spaceX+itemWidth, spaceY+itemHeight, -1);
-							// Mark space occupied by the item in the grid and assign the item its own unique space ID for each slot it covers in the grid
-							ds_grid_set_region(grid, column, row, column+itemHeldWidth-1, row+itemHeldHeight-1, IDindex)
-							IDindex ++;
+							// Pick up and drop items
+							else{
+								for (p = 0; p < property.MAX; p++){
+									inventory[topLeftCell, p] = -1;
+									inventory[cell, p] = itemHeld[p];
+									itemHeld[p] = item[p];
+								}
+								// Empty the space in the inventory grid that the item was occupying
+								ds_grid_set_region(grid, spaceX, spaceY, spaceX+itemWidth, spaceY+itemHeight, -1);
+								// Mark space occupied by the previously held item in the grid and assign the it its own unique space ID for each slot it covers in the grid
+								ds_grid_set_region(grid, column, row, column+itemHeldWidth-1, row+itemHeldHeight-1, IDindex)
+								IDindex ++;
+							}
 						}
 						// Otherwise there was more than one item in the area
 						else{

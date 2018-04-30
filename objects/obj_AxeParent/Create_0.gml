@@ -4,5 +4,4 @@
 event_inherited();
 
 // Axe specific variables
-item[property.weaponType] = weapon.axe;
-item[property.weaponSubType] = weaponSub.blunt;
+item[property.subType] = weapon.axe;

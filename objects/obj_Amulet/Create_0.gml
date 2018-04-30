@@ -1,9 +1,9 @@
 /// @description Initialize Variables
 
-// Inherit from Off-Hand Parent
+// Inherit from Neck Parent
 event_inherited();
 
-// Short Sword specific variables
+// Amulet specific variables
 item[property.name] = "Amulet";
 item[property.sprite] = spr_Amulet;
 item[property.object] = obj_Amulet;

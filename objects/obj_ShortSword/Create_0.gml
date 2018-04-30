@@ -11,5 +11,5 @@ item[property.width] = 1;
 item[property.height] = 3;
 item[property.minDamage] = irandom_range(2, 4);
 item[property.maxDamage] = irandom_range(6, 8);
-item[property.reqStrength] = 15;
-item[property.reqDexterity] = 12;
+item[property.maxDurability] = 24;
+item[property.durability] = irandom_range(1, item[property.maxDurability]);

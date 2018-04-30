@@ -4,4 +4,5 @@
 event_inherited();
 
 // Misc specific variables
+item[property.type] = type.misc;
 item[property.rarity] = rarity.normal;

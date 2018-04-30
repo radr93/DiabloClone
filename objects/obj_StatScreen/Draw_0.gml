@@ -51,13 +51,13 @@ draw_text(x+140,y+384, string(p.stats[stat.statPoints]));
 
 // Attack Damage
 draw_text(x+224,y+144, "ATTACK\nDamage");
-draw_text(x+294,y+144, string(p.stats[stat.minDamageAdded]));
-draw_text(x+332,y+144, string(p.stats[stat.maxDamageAdded]));
+draw_text(x+294,y+144, string(p.stats[stat.minDamage]));
+draw_text(x+332,y+144, string(p.stats[stat.maxDamage]));
 
 // Attack Two Damage
 draw_text(x+224,y+176, "ATTACK TWO\nDamage");
-draw_text(x+294,y+176, string(p.stats[stat.minDamageAdded]));
-draw_text(x+332,y+176, string(p.stats[stat.maxDamageAdded]));
+draw_text(x+294,y+176, string(p.stats[stat.minDamage]));
+draw_text(x+332,y+176, string(p.stats[stat.maxDamage]));
 
 // Attack Rating
 draw_text(x+240,y+224, "ATTACK\nRating");

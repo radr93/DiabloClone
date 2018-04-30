@@ -14,7 +14,14 @@ item = argument0;
 
 // Quilted Armor
 if (item[property.object] == obj_QuiltedArmor){
-	item[property.name] = "Arctic Furs\nQuilted Armor";
+	item[property.title] = "Arctic Furs";
+	item[property.reqLevel] = 2;
+	item[property.magic1stat]	= stat.enhancedDefence;
+	item[property.magic1value]	= irandom_range(275, 325);
+	item[property.magic1string] = scr_GetStatString(item[property.magic1stat], item[property.magic1value], item[property.magic1value2]);
+	item[property.magic2stat]	= stat.allResist;
+	item[property.magic2value]	= 10;
+	item[property.magic2string] = scr_GetStatString(item[property.magic2stat], item[property.magic2value], item[property.magic2value2]);
 	return(item);
 }
 

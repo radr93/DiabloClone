@@ -2,53 +2,63 @@
 /*
 
 This alarm exists so the monster/chest rarity rarityMultiplier and the item's level
-are assigned before generating properties.
+are assigned before generating properties for the first time.
 
 */
-// Roll item rarity
-item[property.rarity] = scr_GetRarity(rarityMultiplier, obj_PlayerController.stats[stat.magicFind]);
-
-// Chance to roll ethereal
-if (0.05 >= random(1)){
-	if (item[property.type] != type.misc and item[property.type] != type.neck and item[property.type] != type.ring){
-		item[property.ethereal] = true;
-	}
-}
-
-// If unique rarity
-if (item[property.rarity] == rarity.unique){
-	var uniqueArray = scr_GetUnique(item);
-	// No unique for the item at this item level
-	if (uniqueArray == -1){
-		show_debug_message("ROLLED A UNIQUE BUT IT DOESN'T HAVE A UNIQUE COUNTERPART AT THIS iLVL")
-		item[property.rarity] = rarity.rare;
-	}
-	else{
-		item = uniqueArray;
-	}
-		
-}
-
-// If rare rarity
-if (item[property.rarity] == rarity.rare){
-	
-}
-
-// If magic rarity
-else if (item[property.rarity] == rarity.magic){
-	
-}
-
-// If normal rarity
-if (item[property.rarity] == rarity.normal){
-	// Chance at socketed
-	if (item[property.type] == type.head or item[property.type] == type.chest or
-		item[property.type] == type.weapon or item[property.type] == type.shield){
-		if (0.25 <= random(1)){
-			item[property.socketed] = true;
-			item[property.sockets] = scr_GetSockets(item[property.itemLevel], item[property.maxSockets]);
-			show_debug_message("Generated socketed item with "+string(item[property.sockets])+" sockets.");
+// If rarity wasn't changed in the create event (i.e. runes, potions etc.)
+if (item[property.rarity] == -1){
+	// Roll item rarity
+	item[property.rarity] = scr_GetRarity(rarityMultiplier, obj_PlayerController.stats[stat.magicFind]);
+	// Chance to roll ethereal
+	if (item[property.type] == type.armor or item[property.type] == type.weapon){
+		if (0.05 >= random(1)){
+			item[property.ethereal] = true;
+			// If Armor
+			if (item[property.type] == type.armor){
+				item[property.defence] = round(item[property.defence]*1.5);
+			}
+			// If Weapon
+			else if (item[property.type] == type.weapon){
+				item[property.minDamage] = round(item[property.minDamage]*1.5);
+				item[property.maxDamage] = round(item[property.maxDamage]*1.5);
+			}
 		}
 	}
+	// If normal rarity
+	if (item[property.rarity] == rarity.normal){
+		item = scr_InitializeNormal(item);
+	}
+	// If magic rarity
+	if (item[property.rarity] == rarity.magic){
+		item = scr_InitializeMagic(item);
+	}
+	// If unique rarity
+	if (item[property.rarity] == rarity.unique){
+		var uniqueArray = scr_GetUnique(item);
+		// No unique for the item at this item level
+		if (uniqueArray == -1){
+			item[property.rarity] = rarity.rare;
+			if (item[property.maxDurability] != -1){
+				item[property.maxDurability] = item[property.maxDurability]*3
+				item[property.durability] = irandom_range(1, item[property.maxDurability]);
+			}
+			show_debug_message("\n"+item[property.name]+" rolled unique but no unique counterpart found at iLvl "+string(item[property.itemLevel])+". Converting to rare.")
+		}
+		// Correctly rolled unique, absorb unique's stats
+		else{
+			item = uniqueArray;
+			show_debug_message("\n"+item[property.name]+" rolled unique - item is "+item[property.title]);
+		}
+		
+	}
+	// If rare rarity
+	if (item[property.rarity] == rarity.rare){
+		item = scr_InitializeRare(item);
+	}
 }
+
+// Loop through item's properties and add enhanced def/damage etc. to base item stats
+item = scr_UpdateItem(item);
+
+// Get item tooltip
 item[property.tooltip] = scr_GetTooltip(item);

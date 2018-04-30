@@ -18,6 +18,7 @@ var player = argument0;
 var grid = obj_Inventory.grid;
 ini_open("save/"+player+"/inventoryGrid.ini");
 ds_grid_read(grid, ini_read_string("Save", "Inventory Grid", "DID NOT WORK"));
+obj_Inventory.IDindex = ini_read_real("Save", "IDIndex", "ERROR");
 ini_close();
 
 // Initialize obj_Inventory.inventory[c,p]

@@ -10,7 +10,7 @@
         "027e1dcc-d8c6-4931-92c0-92db0323bed6"
     ],
     "filterType": "GMObject",
-    "folderName": "Weapon",
+    "folderName": "Weapons",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -7,4 +7,6 @@ event_inherited();
 item[property.name] = "Leather Boots";
 item[property.sprite] = spr_LeatherBoots;
 item[property.object] = obj_LeatherBoots;
-item[property.defence] = irandom_range(2, 5);
+item[property.defence] = irandom_range(2, 3);
+item[property.maxDurability] = 12;
+item[property.durability] = irandom_range(1, item[property.maxDurability]);

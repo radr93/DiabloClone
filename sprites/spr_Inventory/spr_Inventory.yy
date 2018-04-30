@@ -41,14 +41,32 @@
                     "mvc": "1.0",
                     "FrameId": "471a1d37-4c4c-4a98-9c0f-797f79716561",
                     "LayerId": "77c6cae2-0c77-41ad-9dd1-5133ce8f492d"
+                },
+                {
+                    "id": "c57bde40-0661-4899-95a4-5d56293e7143",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "471a1d37-4c4c-4a98-9c0f-797f79716561",
+                    "LayerId": "fa5651e8-ebc2-492f-ad1c-1a4737f9f0e5"
                 }
             ]
         }
     ],
-    "gridX": 32,
+    "gridX": 16,
     "gridY": 16,
     "height": 576,
     "layers": [
+        {
+            "id": "fa5651e8-ebc2-492f-ad1c-1a4737f9f0e5",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "7018832f-168c-4299-ad69-f40fbdce08f8",
+            "blendMode": 0,
+            "isLocked": false,
+            "name": "Gold Icon",
+            "opacity": 100,
+            "visible": true
+        },
         {
             "id": "77c6cae2-0c77-41ad-9dd1-5133ce8f492d",
             "modelName": "GMImageLayer",

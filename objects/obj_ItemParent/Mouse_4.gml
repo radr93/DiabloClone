@@ -1,9 +1,14 @@
 /// @description Pick items up
 var inv = obj_Inventory;
 if (!global.clickingSomething and distance_to_object(obj_PlayerParent) <= 32 and inv.itemHeld[property.name] == -1){
+	global.clickingSomething = true;
+	// If item is gold
+	if (item[property.type] == type.misc and item[property.subType] == misc.gold){
+		obj_PlayerController.stats[stat.gold] += goldValue;
+		instance_destroy();
+	}
 	// If you aren't already clicking something and the inventory is closed
-	if (!inv.showInventory){
-		global.clickingSomething = true;
+	else if (!inv.showInventory){
 		var spaceFree = 0;
 		// Loop through inventory cells until you find space
 		for (r = 0; r < inv.rows; r++){
@@ -45,7 +50,6 @@ if (!global.clickingSomething and distance_to_object(obj_PlayerParent) <= 32 and
 
 	// If you click the item while inventory is open
 	else if (inv.showInventory){
-		global.clickingSomething = true;
 		// Transfer item to cursor
 		for (p = 0; p < property.MAX; p++){
 			inv.itemHeld[p] = item[p];

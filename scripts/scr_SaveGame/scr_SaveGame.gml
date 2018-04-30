@@ -23,6 +23,7 @@ var grid = obj_Inventory.grid;
 var invGridString = ds_grid_write(grid);
 ini_open("save/"+player+"/inventoryGrid.ini");
 ini_write_string("Save", "Inventory Grid", invGridString);
+ini_write_real("Save", "IDIndex", obj_Inventory.IDindex);
 ini_close();
 ds_grid_destroy(obj_Inventory.grid); // Clear inventory grid from memory
 

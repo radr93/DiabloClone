@@ -7,8 +7,10 @@ Table of Contents |
 	1.1 Rarities
 	1.2	Item Types
 	1.3 Weapon Types
-	1.4 Equip Slots
-	1.5 Properties
+	1.4 Armor Types
+	1.5 Jewelry Types
+	1.6 Misc Types
+	1.7 Item Properties
 2.0 Player
     2.1 Classes
 	2.2 Stats
@@ -27,15 +29,9 @@ Table of Contents |
 	
 	// 1.2 Item Types
 	enum type{
-		head,
-		neck,
+		armor,
 		weapon,
-		chest,
-		shield,
-		hands,
-		ring,
-		belt,
-		feet,
+		jewelry,
 		misc
 	}
 	
@@ -48,42 +44,49 @@ Table of Contents |
 		polearm		
 	}
 	
-	// 1.4 Weapon Sub-Types
-	enum weaponSub{
-		blunt,
-		sharp,
-		ranged
-	}
-	// 1.5 Equip slots
-	enum equipSlot{
+	// 1.4 Armor Types
+	enum armor{
 		head,
-		neck,
-		weapon,
 		chest,
-		offhand,
+		shield,
 		hands,
-		ring1,
-		ring2,
-		waist,
-		feet
+		belt,
+		feet,
+	}
+	
+	// 1.5 Jewelry Types
+	enum jewelry{
+		ring,
+		neck
+	}
+	
+	// 1.6 Misc Types
+	enum misc{
+		gold,
+		potion,
+		rune
 	}
 
-	// 1.6 Item Properties
+	// 1.7.0 Item Properties
 	// Used to hold values for item properties in inventory/item held/ground item arrays
 	enum property{
 		rarity,			// normal, magic, rare, unique
-		type,			// weapon, head, chest, ring, shield etc.
-		weaponType,		// sword, axe, bow etc.
-		weaponSubType,	// blunt, sharp, ranged etc.
+		type,			// armor, weapon, jewelry, misc
+		subType,		// weapon.axe, weapon.sword, armor.head, armor.chest, misc.potion, etc.
 		width,			// width in inventory
 		height,			// height in inventory
 		itemLevel,
 		
 		title,			// item title as string e.g. "Breath of the Dying", "Grim Slippers" etc.
+		prefix,			// item's magical prefix (if any) as string e.g. "Boar's", "Thief's" etc.
 		name,			// item name as string e.g. "Leather Cap", "Buckler" etc.
+		suffix,			// item's magical suffix (if any) as string e.g. " of the Bear", " of Death" etc.
+		subTitle,		// item's subtitle (if any) as string e.g. "Ah, Beh, Ceh", "Used to socket items", "Opens Chests"
 		sprite,			// sprite reosource for item e.g. spr_LeatherCap, spr_Buckler etc.
 		object,			// object resource for item e.g. obj_LeatherCap, obj_Buckler etc.
 		
+		durability,
+		maxDurability,
 		defence,		// armor base defence
 		minDamage,		// min weapon damage
 		maxDamage,		// max weapon damage
@@ -97,66 +100,30 @@ Table of Contents |
 		maxSockets,		// max sockets allowed for the item
 		sockets,		// number of sockets the item has
 		socketsUsed,	// how many sockets have been filled on the item?
-		socket1,		// reference to what item is stored in what socket
-		socket2,		
-		socket3,
-		socket4,
-		socket5,
 		
 		ethereal,		// true or false is the item ethereal?
 		
 		identified,		// is the object identified?
 		unidtooltip,	// if it's unidentified, what does the tooltip read
 		tooltip,		// if it is identified, what does the tooltip read
-	
-		prop1stat,		
-		prop1statText,	
-		prop1value,		
-		prop1string,	
 		
-		prop2stat,
-		prop2statText,
-		prop2value,
-		prop2string,
+		magic1stat, magic1value, magic1value2, magic1string,		
+		magic2stat, magic2value, magic2value2, magic2string,
+		magic3stat, magic3value, magic3value2, magic3string,
+		magic4stat, magic4value, magic4value2, magic4string,
+		magic5stat, magic5value, magic5value2, magic5string,
+		magic6stat, magic6value, magic6value2, magic6string,
 		
-		prop3stat,
-		prop3statText,
-		prop3value,
-		prop3string,
-		
-		prop4stat,
-		prop4statText,
-		prop4value,
-		prop4string,
-		
-		prop5stat,
-		prop5statText,
-		prop5value,
-		prop5string,
-		
-		prop6stat,
-		prop6statText,
-		prop6value,
-		prop6string,
-		
-		prop7stat,
-		prop7statText,
-		prop7value,
-		prop7string,
-		
-		prop8stat,
-		prop8statText,
-		prop8value,
-		prop8string,
-		
-		prop9stat,
-		prop9statText,
-		prop9value,
-		prop9string,
+		socket1item, socket1stat, socket1value, socket1string,		
+		socket2item, socket2stat, socket2value, socket2string,
+		socket3item, socket3stat, socket3value, socket3string,
+		socket4item, socket4stat, socket4value, socket4string,
+		socket5item, socket5stat, socket5value, socket5string,
+		socket6item, socket6stat, socket6value, socket6string,
 		
 		MAX
 	}
-
+	
 // 2.0 Player ////////
 	// 2.1 Classes
 	enum classes{
@@ -171,11 +138,14 @@ Table of Contents |
 		classString,
 		hardcore,
 		sprite,
+		gold,
 		
 		currentHealth,
 		maxHealth,
 		currentMana,
 		maxMana,
+		maxHealthPercent,
+		maxManaPercent,
 		
 		level,
 		expCurrent,
@@ -183,27 +153,62 @@ Table of Contents |
 		statPoints,
 		skillPoints,
 		
-		attackRating,
-		minDamageBase,
-		maxDamageBase,
-		minDamageAdded,
-		maxDamageAdded,
-		
-		defence,
-		damageReduction,
-		
+		allAttributes,
 		strength,
 		dexterity,
 		vitality,
 		intelligence,
 		
+		attackRating,
+		enhancedDamage,
+		ignoreDefence,
+		knockback,
+		preventHeal,
+		lifeSteal,
+		manaSteal,
+		
+		movementSpeed,
+		attackSpeed,
+		castRate,
+		minDamage,
+		maxDamage,
+		fireDamage,
+		fireDamageMax,
+		coldDamage,
+		coldDamageMax,
+		lightningDamage,
+		lightningDamageMax,
+		poisonDamage,
+		poisonDamageMax,
+		
+		defence,
+		enhancedDefence,
+		blockChance,
+		damageReduction,
+		damageReductionPercent,
+		hitRecovery,
+		healthRegen,
+		manaRegen,
+		
+		allResist,
 		fireResist,
 		coldResist,
 		lightningResist,
 		poisonResist,
+		fireResistMax,
+		coldResistMax,
+		lightningResistMax,
+		poisonResistMax,
+		
+		coldLength,
+		poisonLength,
 		
 		magicFind,
 		goldFind,
+		
+		socketed,
+		requirements,
+		allSkills,
 		
 		MAX
 	}

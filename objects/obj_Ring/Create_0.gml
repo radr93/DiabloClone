@@ -1,6 +1,6 @@
 /// @description Initialize Variables
 
-// Inherit from Off-Hand Parent
+// Inherit from Ring Parent
 event_inherited();
 
 // Ring specific variables
