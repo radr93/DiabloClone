@@ -12,8 +12,8 @@ This script checks if an item that rolls unique actually has a real unique item.
 var item;
 item = argument0;
 
-// Leather Boots
-if (item[property.object] == obj_LeatherBoots){
+// Leather Shoes
+if (item[property.sprite] == spr_LeatherShoes){
 	item[property.title] = "Hotspur";
 	item[property.defence] = 10;
 	item[property.reqLevel] = 5;

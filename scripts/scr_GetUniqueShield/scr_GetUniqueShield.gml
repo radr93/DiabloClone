@@ -13,7 +13,7 @@ var item;
 item = argument0;
 
 // Buckler
-if (item[property.object] == obj_Buckler){
+if (item[property.sprite] == spr_Buckler){
 	item[property.title] = "Pelta Lunata";
 	item[property.reqLevel] = 2;
 	item[property.magic1stat]	= stat.enhancedDefence;

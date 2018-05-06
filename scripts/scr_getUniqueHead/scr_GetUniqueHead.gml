@@ -13,7 +13,7 @@ var item;
 item = argument0;
 
 // Leather Cap
-if (item[property.object] == obj_LeatherCap){
+if (item[property.sprite] == spr_Hood){
 	item[property.title]	= "Biggin's Bonnet";
 	item[property.reqLevel] = 3;
 	item[property.magic1stat]	= stat.enhancedDamage;

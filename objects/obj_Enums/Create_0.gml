@@ -41,7 +41,8 @@ Table of Contents |
 		axe,
 		mace,
 		bow,
-		polearm		
+		polearm,
+		MAX
 	}
 	
 	// 1.4 Armor Types
@@ -52,12 +53,14 @@ Table of Contents |
 		hands,
 		belt,
 		feet,
+		MAX
 	}
 	
 	// 1.5 Jewelry Types
 	enum jewelry{
 		ring,
-		neck
+		neck,
+		MAX
 	}
 	
 	// 1.6 Misc Types
@@ -67,23 +70,24 @@ Table of Contents |
 		rune
 	}
 
-	// 1.7.0 Item Properties
+	// 1.7 Item Properties
 	// Used to hold values for item properties in inventory/item held/ground item arrays
 	enum property{
 		rarity,			// normal, magic, rare, unique
 		type,			// armor, weapon, jewelry, misc
 		subType,		// weapon.axe, weapon.sword, armor.head, armor.chest, misc.potion, etc.
-		width,			// width in inventory
-		height,			// height in inventory
-		itemLevel,
+		qLvl,
 		
 		title,			// item title as string e.g. "Breath of the Dying", "Grim Slippers" etc.
 		prefix,			// item's magical prefix (if any) as string e.g. "Boar's", "Thief's" etc.
 		name,			// item name as string e.g. "Leather Cap", "Buckler" etc.
 		suffix,			// item's magical suffix (if any) as string e.g. " of the Bear", " of Death" etc.
 		subTitle,		// item's subtitle (if any) as string e.g. "Ah, Beh, Ceh", "Used to socket items", "Opens Chests"
-		sprite,			// sprite reosource for item e.g. spr_LeatherCap, spr_Buckler etc.
-		object,			// object resource for item e.g. obj_LeatherCap, obj_Buckler etc.
+		sprite,			// sprite resource for item e.g. spr_LeatherCap, spr_Buckler etc.
+		width,			// width in inventory
+		height,			// height in inventory
+		itemLevel,		// the item's level
+		object,
 		
 		durability,
 		maxDurability,

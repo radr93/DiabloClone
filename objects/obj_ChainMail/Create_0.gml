@@ -3,7 +3,7 @@
 // Inherit from Chest Parent
 event_inherited();
 
-// Quilted Armor specific variables
+// Chain Mail specific variables
 item[property.name] = "Chain Mail";
 item[property.sprite] = spr_ChainMail;
 item[property.object] = obj_ChainMail;

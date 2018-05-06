@@ -13,7 +13,7 @@ var item;
 item = argument0;
 
 // Belt
-if (item[property.object] == obj_Sash){
+if (item[property.sprite] == spr_Sash){
 	item[property.title] = "The String of Ears";
 	item[property.defence] = irandom_range(29,34);
 	item[property.reqLevel] = 29;

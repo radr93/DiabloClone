@@ -13,7 +13,7 @@ var item;
 item = argument0;
 
 // Quilted Armor
-if (item[property.object] == obj_QuiltedArmor){
+if (item[property.sprite] == spr_QuiltedTunic){
 	item[property.title] = "Arctic Furs";
 	item[property.reqLevel] = 2;
 	item[property.magic1stat]	= stat.enhancedDefence;

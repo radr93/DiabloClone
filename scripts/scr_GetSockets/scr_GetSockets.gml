@@ -11,7 +11,6 @@ amount allowed for the item calling.
 
 */
 
-var iLvl = argument0;
-var maxSockets = argument1;
+var maxSockets = argument0;
 var sockets = irandom_range(1, maxSockets);
 return(sockets);

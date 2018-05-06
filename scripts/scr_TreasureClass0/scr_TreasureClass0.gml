@@ -32,7 +32,7 @@ else if (pick == 5){
 	pick = choose(1, 2, 3, 4, 5, 6, 7, 8);
 	// Armor 
 	if (pick == 1){
-		return(obj_QuiltedArmor);
+		return(obj_QuiltedTunic);
 	}
 
 	else if (pick == 2){
@@ -44,11 +44,11 @@ else if (pick == 5){
 	}
 
 	else if (pick == 4){
-		return(obj_LeatherCap);
+		return(obj_Hood);
 	}
 
 	else if (pick == 5){
-		return(obj_LeatherBoots);
+		return(obj_LeatherShoes);
 	}
 
 	// Weapons

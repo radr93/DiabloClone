@@ -9,4 +9,4 @@ item[property.name] = "Gold";
 item[property.sprite] = spr_GoldSmall;
 item[property.object] = obj_Gold;
 
-goldValue = 0; // amount of gold the pile is worth (changed in Alarm[0])
+goldValue = 0; // amount of gold the pile is worth (decided in Alarm[0] after an item level has been retrieved)

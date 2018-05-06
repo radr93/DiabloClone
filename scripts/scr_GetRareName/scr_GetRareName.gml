@@ -33,7 +33,7 @@ switch _type{
 			case armor.feet:
 				firstWord = choose(
 				"Grim ", "Terror ", "Horror ", "Tribulation ", "Death ", "Hubris ", "Challenge ", "Nightmare ", "Dream ",
-				"Destruction ", "Ghostly ", "Ghastly"
+				"Destruction ", "Ghostly ", "Ghastly "
 				)
 				break;
 		}

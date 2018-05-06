@@ -13,7 +13,7 @@ var item;
 item = argument0;
 
 // Gauntlets
-if (item[property.object] == obj_Gauntlets){
+if (item[property.sprite] == spr_Gauntlets){
 	item[property.title] = "Frostburn";
 	item[property.reqLevel] = 29;
 	item[property.magic1stat]	= stat.enhancedDefence;

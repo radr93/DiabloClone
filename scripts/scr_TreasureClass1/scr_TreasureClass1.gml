@@ -33,7 +33,7 @@ else if (pick == 5){
 	pick = choose(1, 2, 3, 4, 5, 6, 7, 8, 9);
 	// Armor 
 	if (pick == 1){
-		return(obj_Helm);
+		return(obj_Cervelliere);
 	}
 	else if (pick == 2){
 		return(obj_Poleaxe);

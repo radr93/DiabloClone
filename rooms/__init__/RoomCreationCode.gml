@@ -10,5 +10,8 @@ instance_create_layer(x, y, "Controllers", obj_Global);		// Launches all global 
 instance_create_layer(x, y, "Controllers", input);			// Detects user input
 instance_create_layer(x, y, "Controllers", obj_Enums);		// Launches all enums used in game
 
+// External Databases
+instance_create_layer(x, y, "Controllers", obj_ItemDatabase); // Launches item database
+instance_create_layer(x, y, "Controllers", obj_TreasureClassDatabase); // Launches treasure class database
 // Go to splash screen and main menu after init complete
 room_goto(rm_SplashScreen);

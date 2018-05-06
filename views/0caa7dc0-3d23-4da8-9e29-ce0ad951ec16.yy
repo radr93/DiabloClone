@@ -4,8 +4,8 @@
     "mvc": "1.1",
     "name": "0caa7dc0-3d23-4da8-9e29-ce0ad951ec16",
     "children": [
-        "6ec15aee-3a87-4d75-8370-1e3e0bed056f",
-        "d21d83f8-651d-4a80-9aaa-bff12501229f"
+        "30091c9e-cd3c-4a30-bc49-a3d75ceb78e7",
+        "9806b801-9e39-488a-ac6f-79b4cb23e6ad"
     ],
     "filterType": "GMSprite",
     "folderName": "Swords",

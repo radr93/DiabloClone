@@ -13,7 +13,7 @@ var item;
 item = argument0;
 
 // Amulet
-if (item[property.object] == obj_Amulet){
+if (item[property.sprite] == spr_Amulet){
 	item[property.title] = "Mara's Kaleidoscope";
 	item[property.reqLevel] = 67;
 	item[property.magic1stat]	= stat.allSkills;

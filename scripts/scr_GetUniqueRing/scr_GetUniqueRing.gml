@@ -13,7 +13,7 @@ var item;
 item = argument0;
 
 // Ring
-if (item[property.object] == obj_Ring){
+if (item[property.sprite] == spr_Ring){
 	item[property.title] = "The Stone of Jordan";
 	item[property.reqLevel] = 29;
 	item[property.magic1stat]	= stat.allSkills;
