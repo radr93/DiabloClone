@@ -1,0 +1,32 @@
+"name,","tc,","rarity,","type,","subtype,","sprite,","subTitle,","width,","height,","reqLevel,","magic1stat,","magic1value,","magic1string,","magic2stat,","magic2value,","magic2string,","magic3stat,","magic3value,","magic3string,","magic4stat,","magic4value,","magic4string,"
+Gold,0,0,misc,gold,spr_GoldSmall,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Minor Health Potion,0,0,misc,potion,spr_MinorHealth,Restore x health points.,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Minor Mana Potion,0,0,misc,potion,spr_MinorMana,Restore x mana points.,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Ring,0,-1,misc,ring,spr_Ring,Can be inserted into socketed items,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Amulet,0,-1,misc,neck,spr_Amulet,Can be inserted into socketed items,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Ah Rune,0,0,misc,rune,spr_AhRune,Can be inserted into socketed items,1,1,11,attackRating,50,Weapons: +50 to Attack Rating,attackRating,35,Armor: +35 to Attack Rating,attackRating,25,Helms: +25 to Attack Rating,attackRating,45,Shields: +45 to Attack Rating
+Bei Rune,0,0,misc,rune,spr_BeiRune,Can be inserted into socketed items,1,1,11,defence,50,Weapons: +50 to Defence,attackRating,35,Armor: +35 to Defence,attackRating,25,Helms: +25 to Defence,attackRating,45,Shields: +45 to Defence
+Ceh Rune,0,0,misc,rune,spr_CehRune,Can be inserted into socketed items,1,1,13,strength,5,Weapons: +5 to Strength,strength,5,Armor: +5 to Strength,strength,5,Helms: +5 to Strength,strength,5,Shields: +5 to Strength
+Deh Rune,0,0,misc,rune,spr_DehRune,Can be inserted into socketed items,1,1,15,dexterity,5,Weapons: +5 to Dexterity,dexterity,5,Armor: +5 to Dexterity,dexterity,5,Helms: +5 to Dexterity,dexterity,5,Shields: +5 to Dexterity
+Euh Rune,0,0,misc,rune,spr_EuhRune,Can be inserted into socketed items,1,1,17,vitality,5,Weapons: +5 to Vitality,vitality,5,Armor: +5 to Vitality,vitality,5,Helms: +5 to Vitality,vitality,5,Shields: +5 to Vitality
+Eff Rune,0,0,misc,rune,spr_EffRune,Can be inserted into socketed items,1,1,19,intelligence,5,Weapons: +5 to Intelligence,intelligence,5,Armor: +5 to Intelligence,intelligence,5,Helms: +5 to Intelligence,intelligence,5,Shields: +5 to Intelligence
+Jeh Rune,0,0,misc,rune,spr_JehRune,Can be inserted into socketed items,1,1,21,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Asche Rune,0,0,misc,rune,spr_AscheRune,Can be inserted into socketed items,1,1,23,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Eah Rune,0,0,misc,rune,spr_EahRune,Can be inserted into socketed items,1,1,25,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Ji Rune,0,0,misc,rune,spr_JiRune,Can be inserted into socketed items,1,1,27,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Ka Rune,0,0,misc,rune,spr_KaRune,Can be inserted into socketed items,1,1,29,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Ehl Rune,0,0,misc,rune,spr_EhlRune,Can be inserted into socketed items,1,1,31,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Emh Rune,0,0,misc,rune,spr_EmhRune,Can be inserted into socketed items,1,1,33,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+En Rune,0,0,misc,rune,spr_EnRune,Can be inserted into socketed items,1,1,35,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Oah Rune,0,0,misc,rune,spr_OahRune,Can be inserted into socketed items,1,1,37,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Peh Rune,0,0,misc,rune,spr_PehRune,Can be inserted into socketed items,1,1,39,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Qu Rune,0,0,misc,rune,spr_QuRune,Can be inserted into socketed items,1,1,41,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Aire Rune,0,0,misc,rune,spr_AireRune,Can be inserted into socketed items,1,1,43,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Ess Rune,0,0,misc,rune,spr_EssRune,Can be inserted into socketed items,1,1,45,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Teh Rune,0,0,misc,rune,spr_TehRune,Can be inserted into socketed items,1,1,47,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Uh Rune,0,0,misc,rune,spr_UhRune,Can be inserted into socketed items,1,1,49,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Veah Rune,0,0,misc,rune,spr_VeahRune,Can be inserted into socketed items,1,1,51,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Dublaveah Rune,0,0,misc,rune,spr_DublaveahRune,Can be inserted into socketed items,1,1,53,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Ixse Rune,0,0,misc,rune,spr_IxseRune,Can be inserted into socketed items,1,1,55,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Ygrek Rune,0,0,misc,rune,spr_YgrekRune,Can be inserted into socketed items,1,1,57,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 
+Zed Rune,0,0,misc,rune,spr_ZedRune,Can be inserted into socketed items,1,1,59,-1,-1,Weapons: ,-1,-1,Armor: ,-1,-1,Helms: ,-1,-1,Shields: 

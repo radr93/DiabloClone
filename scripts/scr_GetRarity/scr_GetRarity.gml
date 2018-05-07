@@ -7,7 +7,7 @@ baseChance	The drop source's base chance multiplier to drop a magic item
 			1 = normal, 2 = 2x chance, 3 = 3x chance etc..
 playerMF	The amount of bonus magic find % the player has
 
-
+Description:
 This script uses the the player's magic find % and the monster's base chance to
 drop a magic item to determine which rarity the item rolls.
 
@@ -37,9 +37,9 @@ if (uniqueDropRate >= random(1)){
 	return(rarity.unique);
 }
 // If it didn't roll unique, try to roll a set
-if (uniqueDropRate >= random(1)){
-	return(rarity.set);
-}
+//if (uniqueDropRate >= random(1)){
+	//return(rarity.set);
+//}
 // If it didn't roll set, try to roll a rare
 else if (rareDropRate >= random(1)){
 	return(rarity.rare);

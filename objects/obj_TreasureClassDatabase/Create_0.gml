@@ -1,42 +1,36 @@
 /// @description Initialize Variables
 
+/// Load Treasure Class data into ds grids
+// Master Treasure Class sheet
 tcMaster = load_csv("tcdb/tcMaster.csv");
-for (var i = 0; i < 4; i++){
-	tcArmor[i] = load_csv("tcdb/armor/armor"+string(i)+".csv");
-}
 
-/*
-for (var i = 0; i < 31; i++){
-	tcArmor[i] = load_csv("tcdb/armor/armor"+string(i)+".csv");
+// Armor Drop Tables
+for (var i = 0; i <= 9; i++){
+	armorTable[i] = load_csv("tcdb/armor/armor"+string(i)+".csv");
+	show_debug_message("armorTable["+string(i)+"]");
 }
-for (i = 0; i < 31; i++){
-	tcWeapons[i] = load_csv("tcdb/weapons/weapon"+string(i)+".csv");
-}*/
-
-// Treasure Class Master column indexes
-enum tcmColumn{
-	treasureClass,
-	level,
-	picks,
-	noDrop,
-	choice1,prob1,	choice2,prob2,	choice3,prob3,	choice4,prob4,	choice5,prob5,
-	choice6,prob6,	choice7,prob7,	choice8,prob8,	choice9,prob9,	choice10,prob10,
-	sumChoices,
-	totalProb,
-	dropChance,
-	range,
-	MAX
+// Weapon Drop Tables
+for (i = 0; i <= 9; i++){
+	weaponTable[i] = load_csv("tcdb/weapons/weapon"+string(i)+".csv");
+	show_debug_message("weaponTable["+string(i)+"]");
 }
-
-enum tcmRow{
-	COLUMN_INDICATOR,
-	gold,
-	jewelry,
-	hpotion1,hpotion2,
-	mpotion1,mpotion2,
-	runes0,runes1,runes2,runes3,runes4,runes5,
-	tc0,tc1,tc2,tc3,tc4,tc5,tc6,tc7,tc8,tc9,
-	tc10,tc11,tc12,tc13,tc14,tc15,tc16,tc17,tc18,tc19,
-	tc20,tc21,tc22,tc23,tc24,tc25,tc26,tc27,tc28,tc29,tc30,
-	MAX
+// Misc Drop Tables
+for (i = 0; i <= 2; i++){
+	miscTable[i] = load_csv("tcdb/misc/misc"+string(i)+".csv");
+	show_debug_message("miscTable["+string(i)+"]");
+}
+// Rune Drop Tables
+for (i = 0; i <= 1; i++){
+	runeTable[i] = load_csv("tcdb/misc/runes/runes"+string(i)+".csv");
+	show_debug_message("runeTable["+string(i)+"]");
+}
+// Potion Drop Tables
+for (i = 0; i < 1; i++){
+	potionTable[i] = load_csv("tcdb/misc/potions/potions"+string(i)+".csv");
+	show_debug_message("potionTable["+string(i)+"]");
+}
+// Jewelry Drop Tables
+for (i = 0; i < 1; i++){
+	jewelryTable[i] = load_csv("tcdb/misc/jewelry/jewelry"+string(i)+".csv");
+	show_debug_message("jewelryTable["+string(i)+"]");
 }

@@ -38,26 +38,18 @@ switch _type{
 				break;
 		}
 	case type.weapon:
-		switch _subType{
-			case weapon.axe:
-				
-			case weapon.sword:
-				
-			case weapon.mace:
-				
-			case weapon.bow:
-				
-			case weapon.polearm:
+		//switch _subType{
+			
 				firstWord = choose(
 				"Flesh ", "Brain ", "Spine ", "Specter ", "Evil ", "Destruction ", "Bone ", "Visceral ", "Gore " 
 				)
 				break;
-		}
-	case type.jewelry:
+		//}
+	case type.misc:
 		switch _subType{
-			case jewelry.neck:
+			case misc.neck:
 				
-			case jewelry.ring:
+			case misc.ring:
 				firstWord = choose(
 				"Dream ", "Nightmare ", "Hell ", "Evil ", "Angelic ", "Existence ", "Powerful ", "Destruction ", "Love ", "Hate "
 				)
@@ -130,14 +122,14 @@ switch _type{
 				break;
 		}
 		break;
-	case type.jewelry:
+	case type.misc:
 		switch _subType{
-			case jewelry.neck:
+			case misc.neck:
 				secondWord = choose(
 				"Gorget", "String", "Necklace", "Amulet", "Pendant", "Charm"
 				)
 				break;
-			case jewelry.ring:
+			case misc.ring:
 				secondWord = choose(
 				"Loop", "Band", "Ring", "Aureole", "Wreath", "Hoop", "Cordon", "Whorl"
 				)

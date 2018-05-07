@@ -12,7 +12,7 @@
         "1a37bf45-f56b-41a7-953b-e3dfbbcaa88b"
     ],
     "filterType": "GMScript",
-    "folderName": "Get Drop Stats",
+    "folderName": "Get Drop Properties",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

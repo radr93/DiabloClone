@@ -48,13 +48,13 @@ switch (itemType){
 		suffixRoll = scr_GetSuffixStatWeapon(iLvl);
 		return(suffixRoll);
 	// If jewelry
-	case type.jewelry:
+	case type.misc:
 		// Check subType, get property and return variable
 		switch (itemSubType){
-			case jewelry.neck:
+			case misc.neck:
 				suffixRoll = scr_GetSuffixStatNeck(iLvl);
 				return(suffixRoll);
-			case jewelry.ring:
+			case misc.ring:
 				suffixRoll = scr_GetSuffixStatRing(iLvl);
 				return(suffixRoll);
 		}

@@ -45,11 +45,11 @@ else if (item[property.type] == type.weapon){
 		// roll = scr_GetUniquePolearm(item);
 	}
 }
-else if (item[property.type] == type.jewelry){
-	if (item[property.subType] == jewelry.neck){
+else if (item[property.type] == type.misc){
+	if (item[property.subType] == misc.neck){
 		roll = scr_GetUniqueNeck(item);
 	}
-	else if (item[property.subType] == jewelry.ring){
+	else if (item[property.subType] == misc.ring){
 		roll = scr_GetUniqueRing(item);
 	}
 }

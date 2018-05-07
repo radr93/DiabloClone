@@ -1,0 +1,72 @@
+"name,","tc,","type,","subtype,","sprite,","width,","height,","maxDurability,","twoHanded,","attackSpeed,","minDamage,","maxDamage,","reqStrength,","reqDexterity,","reqIntelligence,","reqLevel,","maxSockets,"
+Hatchet,0,weapon,axe,spr_Hatchet,1,3,28,-1,fast,4,11,-1,-1,-1,-1,2
+Cleaver,2,weapon,axe,spr_Cleaver,2,3,24,-1,normal,4,11,32,-1,-1,-1,4
+Double Axe,4,weapon,axe,spr_DoubleAxe,2,3,24,-1,fast,5,13,43,-1,-1,-1,5
+Military Pick,6,weapon,axe,spr_MilitaryPick,2,3,26,-1,normal,7,11,49,33,-1,-1,6
+War Axe,8,weapon,axe,spr_WarAxe,2,3,26,-1,normal,10,18,67,-1,-1,-1,6
+Large Axe,1,weapon,axe,spr_LargeAxe,2,3,30,1,normal,6,13,35,-1,-1,-1,4
+Broad Axe,3,weapon,axe,spr_BroadAxe,2,3,35,1,normal,10,18,48,-1,-1,-1,5
+Battle Axe,5,weapon,axe,spr_BattleAxe,2,3,40,1,slow,12,32,54,-1,-1,-1,5
+Great Axe,7,weapon,axe,spr_GreatAxe,2,4,50,1,very slow,9,30,63,39,-1,-1,6
+Giant Axe,8,weapon,axe,spr_GiantAxe,2,3,50,1,normal,22,45,70,-1,-1,-1,6
+Short Bow,0,weapon,bow,spr_ShortBow,2,3,-1,1,fast,1,4,-1,15,-1,-1,3
+Hunting Bow,1,weapon,bow,spr_HuntingBow,2,3,-1,1,very fast,2,6,-1,28,-1,-1,4
+Long Bow,2,weapon,bow,spr_LongBow,2,4,-1,1,fast,3,10,22,19,-1,-1,5
+Composite Bow,3,weapon,bow,spr_CompositeBow,2,3,-1,1,very fast,4,8,25,35,-1,-1,4
+Short War Bow,5,weapon,bow,spr_ShortWarBow,2,3,-1,1,fast,6,14,35,55,-1,-1,5
+Long War Bow,7,weapon,bow,spr_LongWarBow,2,4,-1,1,fast,3,23,50,65,-1,-1,6
+Light Crossbow,1,weapon,crossbow,spr_LightCrossbow,2,3,-1,1,normal,6,9,21,27,-1,-1,3
+Crossbow,4,weapon,crossbow,spr_Crossbow,2,3,-1,1,slow,9,16,40,33,-1,-1,4
+Heavy Crossbow,7,weapon,crossbow,spr_HeavyCrossbow,2,4,-1,1,very slow,14,26,60,40,-1,-1,6
+Repeating Crossbow,9,weapon,crossbow,spr_RepeatingCrossbow,2,3,-1,1,fast,6,12,40,50,-1,-1,5
+Dagger,1,weapon,dagger,spr_Dagger,1,2,16,-1,very fast,1,4,-1,-1,-1,-1,1
+Dirk,2,weapon,dagger,spr_Dirk,1,2,20,-1,fast,3,9,-1,25,-1,-1,1
+Kris,5,weapon,dagger,spr_Kris,1,3,24,-1,very fast,2,11,-1,45,-1,-1,3
+Blade,7,weapon,dagger,spr_Blade,1,3,24,-1,very fast,4,15,35,51,-1,-1,2
+Javelin,0,weapon,javelin,spr_Javelin,1,3,-1,-1,very fast,6,14,-1,-1,-1,-1,-1
+Pilum,3,weapon,javelin,spr_Pilum,1,3,-1,-1,very fast,7,20,-1,45,-1,-1,-1
+Short Spear,4,weapon,javelin,spr_ShortSpear,1,3,-1,-1,fast,10,22,40,40,-1,-1,-1
+Glaive,7,weapon,javelin,spr_Glaive,1,4,-1,-1,normal,16,22,52,35,-1,-1,-1
+Throwing Spear,9,weapon,javelin,spr_ThrowingSpear,1,4,-1,-1,normal,12,30,-1,65,-1,-1,-1
+Club,0,weapon,mace,spr_Club,1,3,24,-1,very fast,1,6,-1,-1,-1,-1,2
+Barbed Club,1,weapon,mace,spr_BarbedClub,1,3,36,-1,fast,5,8,-1,-1,-1,-1,2
+Mace,2,weapon,mace,spr_Mace,1,3,60,-1,fast,3,10,27,-1,-1,-1,2
+Morning Star,4,weapon,mace,spr_MorningStar,1,3,72,-1,normal,7,16,36,-1,-1,-1,3
+Flail,6,weapon,mace,spr_Flail,2,3,30,-1,normal,1,24,41,35,-1,-1,5
+War Hammer,8,weapon,mace,spr_WarHammer,2,3,55,-1,slow,19,29,53,-1,-1,-1,4
+Maul,6,weapon,mace,spr_Maul,2,3,60,1,normal,30,43,69,-1,-1,-1,6
+Great Maul,9,weapon,mace,spr_GreatMaul,2,4,60,1,slow,38,58,99,-1,-1,-1,6
+Bardiche,1,weapon,polearm,spr_Bardiche,2,4,50,1,normal,1,27,40,-1,-1,-1,3
+Voulge,3,weapon,polearm,spr_Voulge,2,4,50,1,slow,6,21,50,-1,-1,-1,4
+Scythe,4,weapon,polearm,spr_Scythe,2,4,65,1,normal,8,20,41,41,-1,-1,5
+Poleaxe,6,weapon,polearm,spr_Poleaxe,2,4,65,1,slow,18,39,62,-1,-1,-1,5
+Halberd,9,weapon,polearm,spr_Halberd,2,4,55,1,slow,12,45,75,47,-1,-1,6
+War Scythe,9,weapon,polearm,spr_WarScythe,2,4,55,1,slow,15,36,80,80,-1,-1,6
+Spear,1,weapon,spear,spr_Spear,2,4,30,1,normal,3,15,-1,20,-1,-1,3
+Trident,2,weapon,spear,spr_Trident,2,4,35,1,slow,9,15,38,24,-1,-1,4
+Brandistock,5,weapon,spear,spr_Brandistock,2,4,28,1,fast,7,17,40,50,-1,-1,5
+Spetum,6,weapon,spear,spr_Spetum,2,4,28,1,slow,15,23,54,35,-1,-1,6
+Pike,7,weapon,spear,spr_Pike,2,4,25,1,very slow,14,63,60,45,-1,-1,6
+Short Staff,0,weapon,staff,spr_ShortStaff,1,3,20,1,fast,1,5,-1,-1,-1,-1,2
+Long Staff,2,weapon,staff,spr_LongStaff,1,4,30,1,fast,2,8,-1,-1,-1,-1,3
+Gnarled Staff,3,weapon,staff,spr_GnarledStaff,1,4,35,1,normal,4,12,-1,-1,-1,-1,4
+Battle Staff,5,weapon,staff,spr_BattleStaff,1,4,40,1,fast,6,13,-1,-1,-1,-1,4
+War Staff,7,weapon,staff,spr_WarStaff,2,4,50,1,normal,12,28,-1,-1,-1,-1,6
+Short Sword,0,weapon,sword,spr_ShortSword,1,3,24,-1,fast,2,7,-1,-1,-1,-1,2
+Scimitar,1,weapon,sword,spr_Scimitar,1,3,22,-1,very fast,2,6,-1,-1,-1,-1,2
+Sabre,2,weapon,sword,spr_Sabre,1,3,32,-1,very fast,3,8,25,-1,-1,-1,2
+Falchion,3,weapon,sword,spr_Falchion,1,3,32,-1,normal,9,17,33,-1,-1,-1,2
+Crystal Sword,3,weapon,sword,spr_CrystalSword,2,3,20,-1,fast,5,15,43,-1,-1,-1,6
+Broad Sword,4,weapon,sword,spr_BroadSword,2,3,32,-1,fast,7,14,48,-1,-1,-1,4
+Long Sword,6,weapon,sword,spr_LongSword,2,3,44,-1,fast,3,19,55,39,-1,-1,4
+War Sword,8,weapon,sword,spr_WarSword,1,3,44,-1,fast,8,20,71,45,-1,-1,3
+Two-Handed Sword,3,weapon,sword,spr_TwoHandedSword,1,4,44,1,fast,2,9,35,27,,-1,3
+Claymore,5,weapon,sword,spr_Claymore,1,4,50,1,fast,5,12,47,-1,-1,-1,4
+Giant Sword,6,weapon,sword,spr_GiantSword,1,4,50,1,fast,3,16,56,34,-1,-1,4
+Bastard Sword,7,weapon,sword,spr_BastardSword,1,4,40,1,normal,7,19,62,-1,-1,-1,4
+Flamberge,8,weapon,sword,spr_Flamberge,2,4,50,1,normal,9,15,70,49,-1,-1,5
+Great Sword,9,weapon,sword,spr_GreatSword,2,4,50,1,slow,25,42,100,60,-1,-1,6
+Wand,0,weapon,wand,spr_Wand,1,2,15,-1,fast,2,4,-1,-1,-1,-1,1
+Yew Wand,3,weapon,wand,spr_YewWand,1,2,15,-1,normal,2,8,-1,-1,-1,-1,1
+Grim Wand,5,weapon,wand,spr_GrimWand,1,2,15,-1,very fast,3,7,-1,-1,-1,-1,2
+Bone Wand,8,weapon,wand,spr_BoneWand,1,2,15,-1,fast,5,11,-1,-1,-1,-1,2

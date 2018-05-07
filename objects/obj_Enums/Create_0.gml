@@ -6,14 +6,20 @@ Table of Contents |
 1.0	Items
 	1.1 Rarities
 	1.2	Item Types
-	1.3 Weapon Types
-	1.4 Armor Types
-	1.5 Jewelry Types
-	1.6 Misc Types
-	1.7 Item Properties
+	1.3 Armor Types
+	1.4 Weapon Types
+	1.5 Misc Types
+	1.6 Item Properties
 2.0 Player
     2.1 Classes
 	2.2 Stats
+3.0 Databases
+	3.1 Item Database
+		3.1.1 Armor Database	(armor.csv)
+		3.1.2 Weapons Database	(weapons.csv)
+		3.1.3 Misc Database		(misc.csv)
+	3.2 Treasure Class Database
+		3.2.1 Treasure Class Master	(tcMaster.csv )
 */
 
 
@@ -31,21 +37,10 @@ Table of Contents |
 	enum type{
 		armor,
 		weapon,
-		jewelry,
 		misc
 	}
 	
-	// 1.3 Weapon Types
-	enum weapon{
-		sword,
-		axe,
-		mace,
-		bow,
-		polearm,
-		MAX
-	}
-	
-	// 1.4 Armor Types
+	// 1.3 Armor Types
 	enum armor{
 		head,
 		chest,
@@ -56,27 +51,39 @@ Table of Contents |
 		MAX
 	}
 	
-	// 1.5 Jewelry Types
-	enum jewelry{
-		ring,
-		neck,
+	// 1.4 Weapon Types
+	enum weapon{
+		axe,
+		bow,
+		crossbow,
+		dagger,
+		javelin,
+		mace,
+		polearm,
+		spear,
+		staff,
+		sword,
+		wand,
+		
 		MAX
 	}
 	
-	// 1.6 Misc Types
+	// 1.5 Misc Types
 	enum misc{
 		gold,
 		potion,
+		neck,
+		ring,
 		rune
 	}
 
-	// 1.7 Item Properties
-	// Used to hold values for item properties in inventory/item held/ground item arrays
+	// 1.6 Item Properties
+	// All properties for items
 	enum property{
 		rarity,			// normal, magic, rare, unique
-		type,			// armor, weapon, jewelry, misc
-		subType,		// weapon.axe, weapon.sword, armor.head, armor.chest, misc.potion, etc.
-		qLvl,
+		type,			// armor, weapon,misc
+		subType,		// weapon.axe, weapon.sword, armor.head, armor.chest, misc.neck, misc.ring, etc.
+		treasureClass,
 		
 		title,			// item title as string e.g. "Breath of the Dying", "Grim Slippers" etc.
 		prefix,			// item's magical prefix (if any) as string e.g. "Boar's", "Thief's" etc.
@@ -136,6 +143,7 @@ Table of Contents |
 		warrior
 	}
 	// 2.2 Stats
+	// All stats kept track of in obj_PlayerController - some are used in item property generation
 	enum stat{
 		name,
 		class,
@@ -210,9 +218,90 @@ Table of Contents |
 		magicFind,
 		goldFind,
 		
-		socketed,
-		requirements,
-		allSkills,
+		socketed,		// All from socketed and below are used for ease of item property generation
+		requirements,	
+		allSkills,		
 		
 		MAX
 	}
+	
+// 3.0 Databases ////////
+	// 3.1 Item Database
+		// 3.1.1 Armor Database
+		// The header of each column in armor.csv
+		enum adb{
+			name,
+			tc,
+			type,
+			subtype,
+			sprite,
+			width,
+			height,
+			maxDurability,
+			minDefence,
+			maxDefence,
+			reqStrength,
+			reqLevel,
+			maxSockets,
+
+			MAX
+		}
+		// 3.1.2 Weapon Database
+		// The header of each column in armor.csv
+		enum wdb{
+			name,
+			tc,
+			type,
+			subtype,
+			sprite,
+			width,
+			height,
+			maxDurability,
+			twoHanded,
+			attackSpeed,
+			minDamage,
+			maxDamage,
+			reqStrength,
+			reqDexterity,
+			reqIntelligence,
+			reqLevel,
+			maxSockets,
+
+			MAX
+		}
+		// 3.1.3 Misc Database
+		// The header of each column in armor.csv
+		enum mdb{
+			name,	
+			tc,	
+			rarity,	
+			type,	
+			subtype,	
+			sprite,	
+			subTitle,	
+			width,	
+			height,	
+			reqLevel,	
+			
+			magic1stat, magic1value, magic1string,	
+			magic2stat,	magic2value, magic2string,	
+			magic3stat,	magic3value, magic3string,
+			magic4stat,	magic4value, magic4string,
+
+
+			MAX
+		}
+	// 3.2 Treasure Class Database
+		// 3.2.1 Treasure Class Master
+		// tcMaster.csv column indexes
+		enum tcmColumn{
+			treasureClass,
+			level,
+			picks,
+			noDrop,
+			choice1,prob1,	choice2,prob2,	choice3,prob3,	choice4,prob4,	choice5,prob5,
+			choice6,prob6,	choice7,prob7,	choice8,prob8,	choice9,prob9,	choice10,prob10,
+			sumChoices,
+			totalProb,
+			MAX
+		}

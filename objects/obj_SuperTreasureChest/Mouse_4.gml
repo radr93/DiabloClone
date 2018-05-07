@@ -5,20 +5,19 @@ global.clickingSomething = true;
 
 // If chest is closed, open it
 if (image_index == 0){
-	show_debug_message("\n## Opening Chest #####\nDrop Source Treasure Class is: "+string(treasureClass));
+	show_debug_message("\n## Opening Chest #####\nTreasure Class is: "+string(treasureClass));
 	image_index = 1;
 	
-	// Choose how many items to drop
+	// Initialize Local Variables
 	var tcdb, index, picks, baseDrop;
 	tcdb = obj_TreasureClassDatabase;
 	
 	// Look up treasure class in tcMaster grid to find row index
-	index = ds_grid_value_y(tcdb.tcMaster, 0, 0, 0, ds_grid_height(tcdb.tcMaster), treasureClass);
-	show_debug_message("Treasure Class's row index in tcMaster = "+string(index));
+	index = ds_grid_value_y(tcdb.tcMaster, 0, 0, 0, ds_grid_height(tcdb.tcMaster)-1, treasureClass);
 	
 	// Choose appropriate amount of drop chances from the picks columns for row index
 	picks = real(ds_grid_get(tcdb.tcMaster, tcmColumn.picks, index));
-	show_debug_message("Number of picks = "+string(picks));
+	show_debug_message("Number of picks = "+string(picks)+"\n");
 	
 	// Drop x amount of items
 	repeat (picks){
@@ -31,8 +30,9 @@ if (image_index == 0){
 			
 			// Create a new item on the ground
 			var i = instance_create_layer(x +- 32, y + 32, "Instances", obj_Item);
-			
-			// Assign the item's base properties (depending on the different base drops)
+			show_debug_message("Creating a new instance ("+string(i)+") for "+baseDrop+".")
+			// Lookup the item's properties from the appropriate item database and then update the
+			// new item's item[property] array with those base values.
 			scr_GetDropProperties(i, baseDrop);
 			
 		}		

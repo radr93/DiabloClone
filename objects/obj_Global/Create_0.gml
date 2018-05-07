@@ -30,9 +30,10 @@ global.launchUI = false; // Set to true when player enters the game
 global.saveSlotsMax = 8;
 ini_open("save/global/global.ini");
 global.saveSlotsUsed = ini_read_real("Save", "Save Slots Used", 0);
-show_debug_message("\n### SAVE INFORMATION ######\nglobal.saveSlotsUsed = "+string(global.saveSlotsUsed));
+show_debug_message("### SAVE INFORMATION ######\nglobal.saveSlotsUsed = "+string(global.saveSlotsUsed));
 for (s = 0; s < global.saveSlotsMax; s++){
 	global.saveSlot[s] = ini_read_string("Save", "Save Slot"+string(s), "");
 	show_debug_message("global.saveSlots["+string(s)+"] = "+global.saveSlot[s]);
 }
+show_debug_message("###########################");
 ini_close();

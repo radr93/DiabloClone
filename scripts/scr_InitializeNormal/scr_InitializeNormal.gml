@@ -16,7 +16,7 @@ var item = argument0;
 show_debug_message("\n"+item[property.name]+" rolled normal.");
 
 // Convert jewelry to magic rarity
-if (item[property.type] == type.jewelry){
+if (item[property.type] == type.misc){
 	show_debug_message("\nJewelry cannot roll normal quality. Converting to magic.");
 	item[property.rarity] = rarity.magic;
 }
