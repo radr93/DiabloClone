@@ -100,6 +100,14 @@ switch _type{
 				"Hewer", "Cleaver", "Fell", "Hacker", "Chopper", "Lopper"
 				)
 				break;
+			case weapon.bow:
+			case weapon.crossbow:
+				secondWord = choose(
+				"Wood", "Song", "Needler", "Flight", "Horn", "Blinder"
+				)
+				break;
+			
+			case weapon.dagger:
 			case weapon.sword:
 				secondWord = choose(
 				"Slicer", "Slasher", "Skewer", "Blade", "Edge", "Cutter", "Plunger", "Stabber"
@@ -110,12 +118,11 @@ switch _type{
 				"Crusher", "Smasher", "Buster", "Ruiner", "Shatterer", "Slammer", "Wrecker", "Destroyer", "Walloper"
 				)
 				break;
-			case weapon.bow:
-				secondWord = choose(
-				"Wood", "Song", "Needler", "Flight", "Horn", "Blinder"
-				)
-				break;
 			case weapon.polearm:
+			case weapon.spear:
+			case weapon.javelin:
+			case weapon.wand:
+			case weapon.staff:
 				secondWord = choose(
 				"Branch", "Twig", "Hewer", "Chopper", "Skewer", "Decapitator", "Beheader"
 				)

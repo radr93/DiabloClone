@@ -37,7 +37,7 @@ Belt,3,armor,belt,spr_Belt,2,1,14,8,11,21,-1,-1
 Heavy Belt,6,armor,belt,spr_HeavyBelt,2,1,20,12,16,28,-1,-1
 Chain Belt,7,armor,belt,spr_ChainBelt,2,1,25,17,22,34,-1,-1
 Plated Belt,8,armor,belt,spr_PlatedBelt,2,1,30,21,30,50,-1,-1
-Sandals,0,armor,feet,spr_Sandles,2,2,6,1,3,-1,-1,-1
+Sandals,0,armor,feet,spr_Sandals,2,2,6,1,3,-1,-1,-1
 Leather Shoes,1,armor,feet,spr_LeatherShoes,2,2,10,3,5,-1,-1,-1
 Leather Boots,2,armor,feet,spr_LeatherBoots,2,2,14,6,10,15,-1,-1
 Chain Boots,3,armor,feet,spr_ChainBoots,2,2,18,11,15,22,-1,-1

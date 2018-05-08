@@ -60,7 +60,7 @@ Crystal Sword,3,weapon,sword,spr_CrystalSword,2,3,20,-1,fast,5,15,43,-1,-1,-1,6
 Broad Sword,4,weapon,sword,spr_BroadSword,2,3,32,-1,fast,7,14,48,-1,-1,-1,4
 Long Sword,6,weapon,sword,spr_LongSword,2,3,44,-1,fast,3,19,55,39,-1,-1,4
 War Sword,8,weapon,sword,spr_WarSword,1,3,44,-1,fast,8,20,71,45,-1,-1,3
-Two-Handed Sword,3,weapon,sword,spr_TwoHandedSword,1,4,44,1,fast,2,9,35,27,,-1,3
+Two-Handed Sword,3,weapon,sword,spr_TwoHandedSword,1,4,44,1,fast,2,9,35,27,-1,-1,3
 Claymore,5,weapon,sword,spr_Claymore,1,4,50,1,fast,5,12,47,-1,-1,-1,4
 Giant Sword,6,weapon,sword,spr_GiantSword,1,4,50,1,fast,3,16,56,34,-1,-1,4
 Bastard Sword,7,weapon,sword,spr_BastardSword,1,4,40,1,normal,7,19,62,-1,-1,-1,4

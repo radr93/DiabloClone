@@ -1,9 +1,9 @@
 "name,","tc,","rarity,","type,","subtype,","sprite,","subTitle,","width,","height,","reqLevel,","magic1stat,","magic1value,","magic1string,","magic2stat,","magic2value,","magic2string,","magic3stat,","magic3value,","magic3string,","magic4stat,","magic4value,","magic4string,"
 Gold,0,0,misc,gold,spr_GoldSmall,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
-Minor Health Potion,0,0,misc,potion,spr_MinorHealth,Restore x health points.,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
-Minor Mana Potion,0,0,misc,potion,spr_MinorMana,Restore x mana points.,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
-Ring,0,-1,misc,ring,spr_Ring,Can be inserted into socketed items,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
-Amulet,0,-1,misc,neck,spr_Amulet,Can be inserted into socketed items,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Minor Health Potion,0,0,misc,potion,spr_MinorHealth,Restore x health points,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Minor Mana Potion,0,0,misc,potion,spr_MinorMana,Restore x mana points,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Ring,0,-1,misc,ring,spr_Ring,-1,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+Amulet,0,-1,misc,neck,spr_Amulet,-1,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
 Ah Rune,0,0,misc,rune,spr_AhRune,Can be inserted into socketed items,1,1,11,attackRating,50,Weapons: +50 to Attack Rating,attackRating,35,Armor: +35 to Attack Rating,attackRating,25,Helms: +25 to Attack Rating,attackRating,45,Shields: +45 to Attack Rating
 Bei Rune,0,0,misc,rune,spr_BeiRune,Can be inserted into socketed items,1,1,11,defence,50,Weapons: +50 to Defence,attackRating,35,Armor: +35 to Defence,attackRating,25,Helms: +25 to Defence,attackRating,45,Shields: +45 to Defence
 Ceh Rune,0,0,misc,rune,spr_CehRune,Can be inserted into socketed items,1,1,13,strength,5,Weapons: +5 to Strength,strength,5,Armor: +5 to Strength,strength,5,Helms: +5 to Strength,strength,5,Shields: +5 to Strength

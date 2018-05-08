@@ -9,10 +9,6 @@ Returns:
 If choice was another treasure class, returns 0.
 If choice was a valid item, returns 1.
 
-e.g.
-argument0 = armor6
-returns(tcdb.armorTable[6])
-
 */
 
 // Initialize Variables

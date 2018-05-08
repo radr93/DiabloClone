@@ -3,9 +3,9 @@
 
 show_debug_message("Loading armor database...");
 // Load Item Databases into ds grids
-armorDB = load_csv("idb/armor.csv");
+armorDB = csv_to_grid("idb/armor.csv", true, undefined, undefined, undefined);
 show_debug_message("loaded idb/armor.csv\nLoading weapons database...");
-//weaponDB = load_csv("idb/weapons.csv");
-//show_debug_message("loaded idb/weapons.csv\nLoading misc database...");
-//miscDB = load_csv("idb/misc.csv");
-//show_debug_message("loaded idb/misc.csv");
+weaponDB = csv_to_grid("idb/weapons.csv", true, undefined, undefined, undefined);
+show_debug_message("loaded idb/weapons.csv\nLoading misc database...");
+miscDB = csv_to_grid("idb/misc.csv", true, undefined, undefined, undefined);
+show_debug_message("loaded idb/misc.csv");

@@ -1,5 +1,5 @@
 {
-    "id": "86c3053b-69e3-4482-b50c-96c5076c14d1",
+    "id": "826e59cf-19be-42c8-9725-207bbfc8d01a",
     "modelName": "GMIncludedFile",
     "mvc": "1.0",
     "name": "weapons.csv",

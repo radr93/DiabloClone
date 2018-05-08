@@ -113,8 +113,6 @@ else if (ds_grid_value_exists(idb.weaponDB, 0, 0, 0, ds_grid_height(idb.weaponDB
 
 // Finally if item wasn't found in weapons db, search for it in misc DB
 	
-//}
-
 else{
 	// Get grid size
 	tableHeight = ds_grid_height(idb.miscDB)-1;
@@ -130,6 +128,15 @@ else{
 		show_debug_message("Property "+string(p)+": "+dropInfo[p]);
 	}
 	
+	// Get rarity as real number and convert it to the proper enum.
+	var _rarity = real(ds_grid_get(idb.miscDB, mdb.rarity, rowIndex));
+	switch _rarity{
+		case 0: _rarity = rarity.normal;	break;
+		case 1: _rarity = rarity.magic;		break;
+		case 2:	_rarity = rarity.rare;		break;
+		case 3: _rarity = rarity.set;		break;
+		case 4: _rarity = rarity.unique;	break;
+	}
 	// Convert item's types from string to their enum value
 	var types;
 	types[0] = ds_grid_get(idb.miscDB, mdb.type, rowIndex)
@@ -137,29 +144,31 @@ else{
 	types[1] = ds_grid_get(idb.miscDB, mdb.subtype, rowIndex)
 	show_debug_message("subType is: "+types[1]);
 	types = scr_GetDropTypes(types);
-	
+
 	// Set new item drop instance's base variables
 	instance.item[property.name]			= ds_grid_get(idb.miscDB, mdb.name, rowIndex);
 	instance.item[property.treasureClass]	= 0;
-	
+	instance.item[property.rarity]			= _rarity;
 	instance.item[property.type]			= types[0]
 	instance.item[property.subType]			= types[1]
 	instance.item[property.sprite]			= asset_get_index(ds_grid_get(idb.miscDB, mdb.sprite, rowIndex));
 	instance.item[property.subTitle]		= ds_grid_get(idb.miscDB, mdb.subTitle, rowIndex);
 	instance.item[property.width]			= real(ds_grid_get(idb.miscDB, mdb.width, rowIndex));
 	instance.item[property.height]			= real(ds_grid_get(idb.miscDB, mdb.height, rowIndex));
-	instance.item[property.magic1stat]		= real(ds_grid_get(idb.miscDB, mdb.magic1stat, rowIndex));
-	instance.item[property.magic1value]		= real(ds_grid_get(idb.miscDB, mdb.magic1value, rowIndex));
-	instance.item[property.magic1string]	= real(ds_grid_get(idb.miscDB, mdb.magic1string, rowIndex));
-	instance.item[property.magic2stat]		= real(ds_grid_get(idb.miscDB, mdb.magic2stat, rowIndex));
-	instance.item[property.magic2value]		= real(ds_grid_get(idb.miscDB, mdb.magic2value, rowIndex));
-	instance.item[property.magic2string]	= real(ds_grid_get(idb.miscDB, mdb.magic2string, rowIndex));
-	instance.item[property.magic3stat]		= real(ds_grid_get(idb.miscDB, mdb.magic3stat, rowIndex));
-	instance.item[property.magic3value]		= real(ds_grid_get(idb.miscDB, mdb.magic3value, rowIndex));
-	instance.item[property.magic3string]	= real(ds_grid_get(idb.miscDB, mdb.magic3string, rowIndex));
-	instance.item[property.magic4stat]		= real(ds_grid_get(idb.miscDB, mdb.magic4stat, rowIndex));
-	instance.item[property.magic4value]		= real(ds_grid_get(idb.miscDB, mdb.magic4value, rowIndex));
-	instance.item[property.magic4string]	= real(ds_grid_get(idb.miscDB, mdb.magic4string, rowIndex));
+	if (ds_grid_get(idb.miscDB, mdb.magic1stat, rowIndex) != "-1"){
+		instance.item[property.magic1stat]		= scr_GetStatEnumFromString(ds_grid_get(idb.miscDB, mdb.magic1stat, rowIndex));
+		instance.item[property.magic1value]		= real(ds_grid_get(idb.miscDB, mdb.magic1value, rowIndex));
+		instance.item[property.magic1string]	= ds_grid_get(idb.miscDB, mdb.magic1string, rowIndex);
+		instance.item[property.magic2stat]		= scr_GetStatEnumFromString(ds_grid_get(idb.miscDB, mdb.magic2stat, rowIndex));
+		instance.item[property.magic2value]		= real(ds_grid_get(idb.miscDB, mdb.magic2value, rowIndex));
+		instance.item[property.magic2string]	= ds_grid_get(idb.miscDB, mdb.magic2string, rowIndex);
+		instance.item[property.magic3stat]		= scr_GetStatEnumFromString(ds_grid_get(idb.miscDB, mdb.magic3stat, rowIndex));
+		instance.item[property.magic3value]		= real(ds_grid_get(idb.miscDB, mdb.magic3value, rowIndex));
+		instance.item[property.magic3string]	= ds_grid_get(idb.miscDB, mdb.magic3string, rowIndex);
+		instance.item[property.magic4stat]		= scr_GetStatEnumFromString(ds_grid_get(idb.miscDB, mdb.magic4stat, rowIndex));
+		instance.item[property.magic4value]		= real(ds_grid_get(idb.miscDB, mdb.magic4value, rowIndex));
+		instance.item[property.magic4string]	= ds_grid_get(idb.miscDB, mdb.magic4string, rowIndex);
+	}
 	
 	// Set new item drop instance's level and rarity multiplier
 	instance.item[property.itemLevel]		= level;

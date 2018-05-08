@@ -1759,6 +1759,14 @@
             }
         },
         {
+            "Key": "773b582d-99b2-4c4b-a35d-fd1fda13d31c",
+            "Value": {
+                "id": "5cba1618-9a73-4486-a23e-069689050dad",
+                "resourcePath": "scripts\\csv_to_grid\\csv_to_grid.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "774a9d78-4b11-4860-9c5a-673116970b84",
             "Value": {
                 "id": "0cf5d4a6-dfb3-40cd-a33b-a0fbfc841863",
@@ -1935,6 +1943,14 @@
             }
         },
         {
+            "Key": "826e59cf-19be-42c8-9725-207bbfc8d01a",
+            "Value": {
+                "id": "b920da7e-6b53-4056-ac03-f557957ab010",
+                "resourcePath": "datafiles_yy\\idb\\weapons.csv.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "827822ae-82fe-4d66-9406-3b4e1403ad27",
             "Value": {
                 "id": "4440d9f4-bf96-449b-b601-2ed531953c22",
@@ -2004,14 +2020,6 @@
                 "id": "ed8c21ab-6cd6-409c-8e9b-d1b391a1305f",
                 "resourcePath": "views\\8692d5d6-9d95-4140-a0db-b0e3549f23ed.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "86c3053b-69e3-4482-b50c-96c5076c14d1",
-            "Value": {
-                "id": "3dd3adc1-0bf7-4c2f-85ba-74a9bb86b336",
-                "resourcePath": "datafiles_yy\\idb\\weapons.csv.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -3015,6 +3023,14 @@
             }
         },
         {
+            "Key": "cf8776e3-7e4a-4e64-932e-bde8ddf3ab19",
+            "Value": {
+                "id": "790facde-51cd-4f6a-8bb4-b0a1ebc62d3a",
+                "resourcePath": "scripts\\scr_GetStatEnumFromString\\scr_GetStatEnumFromString.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cf8d5071-73e2-43d0-90dd-a2badbf50d40",
             "Value": {
                 "id": "b165b9d0-4488-4709-b65e-8acb0ee59232",
@@ -3761,6 +3777,7 @@
         "911a59ac-be29-4788-9650-36115a20400c",
         "8f6eee5f-faa3-4939-889a-d326f351c44e",
         "0105461a-e8ec-43e7-9737-64ad35bc9d41",
+        "cf8776e3-7e4a-4e64-932e-bde8ddf3ab19",
         "e228c4b6-6482-4a2e-9317-511dc189f7cf",
         "6de57748-c675-4060-957e-a70452f7a85b",
         "f52764fe-aa46-476f-83d3-26f214b6ddc8",
@@ -3786,6 +3803,7 @@
         "f9b48c63-52da-40cf-bdf5-b7c6a9d9bd33",
         "6203b3be-6b17-4b5d-8e0b-30a5cc5dcee0",
         "1a37bf45-f56b-41a7-953b-e3dfbbcaa88b",
+        "773b582d-99b2-4c4b-a35d-fd1fda13d31c",
         "8cdf6b70-b3cc-448b-8f37-934904cb4be2",
         "42591d82-1e21-4e91-9a7e-d9dc26b3f7de",
         "704f65f4-6a3c-48d1-b34d-7da8c0171177",
