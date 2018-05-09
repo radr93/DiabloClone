@@ -17,10 +17,10 @@ if (messageQueue[0,msg.text] != ""){
 			message[0,msg.time] = messageQueue[m, msg.time];
 			message[0,msg.sender] = "["+messageQueue[m, msg.sender]+"]: ";
 			var newMessage = messageQueue[m, msg.text];
-			var inputType = scr_CheckInputType(messageQueue[m, msg.text]);
+			var messageType = scr_ConsoleMessageType(messageQueue[m, msg.text]);
 			
 			// If it was a /debug command sent from the user
-			if (inputType == "/debug" and messageQueue[m, msg.sender] == obj_PlayerController.stats[stat.name]){
+			if (messageType == "/debug" and messageQueue[m, msg.sender] == obj_PlayerController.stats[stat.name]){
 				// Get debug return message
 				debugResult = scr_GetDebugCommand(newMessage);
 				// Change sender to system
@@ -30,7 +30,7 @@ if (messageQueue[0,msg.text] != ""){
 			}
 			
 			// If it was a /help command sent from the user
-			else if (inputType == "/help"){
+			else if (messageType == "/help"){
 				message[0,msg.text] = message[0,msg.time]+"["+message[0,msg.sender]+"]: "+messageQueue[m, msg.text];
 				for (h = 0; h < global.helpFileSize; h++){ // Loop through each entry in the help file
 					for (i = 0; i < obj_MessageBox.messageQueueMax; i++){ // Loop through the message queue for an empty cell

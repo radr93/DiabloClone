@@ -7,7 +7,7 @@
         "2768d734-a5c7-447a-b7cf-6b0c36e36de7"
     ],
     "filterType": "GMObject",
-    "folderName": "Stat Screen",
+    "folderName": "Stats Screen",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

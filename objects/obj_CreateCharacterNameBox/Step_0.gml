@@ -2,5 +2,5 @@
 
 // Get input for name and parse to ensure it's acceptable
 
-var nameChecked = scr_CheckName(keyboard_string);
+var nameChecked = scr_ParseNewName(keyboard_string);
 keyboard_string = nameChecked;

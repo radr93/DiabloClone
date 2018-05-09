@@ -25,7 +25,7 @@ if (item[property.type] == type.misc){
 if (item[property.type] == type.armor){
 	if (item[property.subType] == armor.head or item[property.subType] == armor.chest
 	 or item[property.subType] == armor.shield){
-		if (0.25 <= random(1)){
+		if (0.33 <= random(1)){
 			item[property.socketed] = true;
 			item[property.sockets] = scr_GetSockets(item[property.maxSockets]);
 			show_debug_message("It was generated with "+string(item[property.sockets])+" sockets.");
@@ -33,7 +33,7 @@ if (item[property.type] == type.armor){
 	}
 }
 else if (item[property.type] == type.weapon){
-	if (0.25 <= random(1)){
+	if (0.33 <= random(1)){
 		item[property.socketed] = true;
 		item[property.sockets] = scr_GetSockets(item[property.maxSockets]);
 		show_debug_message("It was generated with "+string(item[property.sockets])+" sockets.");

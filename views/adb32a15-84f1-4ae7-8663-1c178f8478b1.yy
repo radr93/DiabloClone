@@ -8,11 +8,10 @@
         "a102ae82-7d43-423c-83ba-27b4f3428797",
         "8442f61b-5d07-443c-bfcc-4f2f445612dd",
         "27e98d1a-fcdc-4992-b586-f2bf2f964881",
-        "f0c2317c-393a-4421-a5ec-7da3d817cd31",
-        "1a37bf45-f56b-41a7-953b-e3dfbbcaa88b"
+        "f0c2317c-393a-4421-a5ec-7da3d817cd31"
     ],
     "filterType": "GMScript",
-    "folderName": "Get Drop Properties",
+    "folderName": "Property Generation",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

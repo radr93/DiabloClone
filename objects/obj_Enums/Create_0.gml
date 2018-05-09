@@ -81,20 +81,20 @@ Table of Contents |
 	// All properties for items
 	enum property{
 		rarity,			// normal, magic, rare, unique
-		type,			// armor, weapon,misc
-		subType,		// weapon.axe, weapon.sword, armor.head, armor.chest, misc.neck, misc.ring, etc.
-		treasureClass,
+		treasureClass,	// treasure class group the object is from
+		itemLevel,		// the item's level
 		
 		title,			// item title as string e.g. "Breath of the Dying", "Grim Slippers" etc.
 		prefix,			// item's magical prefix (if any) as string e.g. "Boar's", "Thief's" etc.
-		name,			// item name as string e.g. "Leather Cap", "Buckler" etc.
+		name,			// item actual name as string e.g. "Leather Cap", "Buckler" etc.
 		suffix,			// item's magical suffix (if any) as string e.g. " of the Bear", " of Death" etc.
-		subTitle,		// item's subtitle (if any) as string e.g. "Ah, Beh, Ceh", "Used to socket items", "Opens Chests"
+		subTitle,		// item's subtitle (if any) as string e.g. "Ah, Beh, Ceh", "Used to socket items", "Right click to use"
 		sprite,			// sprite resource for item e.g. spr_LeatherCap, spr_Buckler etc.
 		width,			// width in inventory
 		height,			// height in inventory
-		itemLevel,		// the item's level
-		object,
+		
+		type,			// armor, weapon,misc
+		subType,		// weapon.axe, weapon.sword, armor.head, armor.chest, misc.neck, misc.ring, etc.
 		
 		durability,
 		maxDurability,
@@ -247,7 +247,7 @@ Table of Contents |
 			MAX
 		}
 		// 3.1.2 Weapon Database
-		// The header of each column in armor.csv
+		// The header of each column in weapons.csv
 		enum wdb{
 			name,
 			tc,
@@ -269,9 +269,10 @@ Table of Contents |
 
 			MAX
 		}
+
 		// 3.1.3 Misc Database
-		// The header of each column in armor.csv
-		enum mdb{
+		// The header of each column in misc.csv
+		enum mscdb{
 			name,	
 			tc,	
 			rarity,	

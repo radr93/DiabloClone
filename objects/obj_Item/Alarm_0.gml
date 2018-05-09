@@ -8,8 +8,10 @@ item's level before generating properties for the first time.
 
 // If properties haven't been generated yet, generate properties
 if (item[property.rarity] == -1){
+	
 	// Roll item rarity
 	item[property.rarity] = scr_GetRarity(rarityMultiplier, obj_PlayerController.stats[stat.magicFind]);
+	
 	// Chance to roll ethereal
 	if (item[property.type] == type.armor or item[property.type] == type.weapon){
 		if (0.05 >= random(1)){
@@ -67,4 +69,4 @@ item = scr_UpdateItem(item);
 item[property.tooltip] = scr_GetTooltip(item);
 
 // Set mask
-object_set_mask(self, item[property.sprite]);
+mask_index = item[property.sprite];

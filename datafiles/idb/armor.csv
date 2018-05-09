@@ -1,4 +1,4 @@
-"name,","tc,","type,","subtype,","sprite,","width,","height,","maxDurability,","minDefence,","maxDefence,","reqStrength,","reqLevel,","maxSockets,"
+name,tc,type,subtype,sprite,width,height,maxDurability,minDefence,maxDefence,reqStrength,reqLevel,maxSockets
 Hood,0,armor,head,spr_Hood,2,2,12,2,4,-1,-1,2
 Cervelliere,1,armor,head,spr_Cervelliere,2,2,15,4,8,12,-1,2
 Coppergate Helmet,3,armor,head,spr_CoppergateHelmet,2,2,20,6,11,18,-1,2

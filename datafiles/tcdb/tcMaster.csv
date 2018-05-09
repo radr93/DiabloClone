@@ -1,4 +1,4 @@
-"treasureClass,","level,","picks,","noDrop,","choice1,","prob1,","choice2,","prob2,","choice3,","prob3,","choice4,","prob4,","choice5,","prob5,","choice6,","prob6,","choice7,","prob7,","choice8,","prob8,","choice9,","prob9,","choice10,","prob10,","sumChoices,","totalProb,"
+treasureClass,level,picks,noDrop,choice1,prob1,choice2,prob2,choice3,prob3,choice4,prob4,choice5,prob5,choice6,prob6,choice7,prob7,choice8,prob8,choice9,prob9,choice10,prob10,sumChoices,totalProb
 gold,,1,1,gold,3,,,,,,,,,,,,,,,,,,,1,4
 jewelry,,1,1,,,,,,,,,,,,,,,,,,,,,0,1
 potions0,,1,1,,,,,,,,,,,,,,,,,,,,,0,1
